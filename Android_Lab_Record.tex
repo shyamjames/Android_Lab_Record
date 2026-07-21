@@ -1,0 +1,48 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=none,
+  columns=fullflexible
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}p{0.48\textwidth}}
+\newcolumntype{R}{>{\raggedright\arraybackslash}p{0.42\textwidth}}
+
+\begin{document}
+\pagestyle{empty}
+
+\noindent
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{|p{0.5\textwidth}|p{0.42\textwidth}|}
+\hline
+Program No: 1 & Date: 29/06/2026 \\
+\hline
+\multicolumn{2}{|p{0.94\textwidth}|}{Program Title: Create an app that displays name and email id.} \\
+\hline
+\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\
+\hline
+\multicolumn{2}{|p{0.94\textwidth}|}{
+\lstinputlisting[language=Java]{code/program1/MainActivity.java}
+} \\
+\hline
+\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\
+\hline
+\multicolumn{2}{|p{0.94\textwidth}|}{
+\lstinputlisting[language=XML]{code/program1/activity_main.xml}
+} \\
+\hline
+\multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/1.png} \end{center}} \\
+\hline
+\end{longtable}
+\endgroup
+
+\end{document}
