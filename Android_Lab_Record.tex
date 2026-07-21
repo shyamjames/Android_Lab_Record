@@ -5,12 +5,23 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[line width=1pt] ($(current page.north west) + (2.2cm,-2.2cm)$) rectangle ($(current page.south east) + (-2.2cm,2.2cm)$);
+  \end{tikzpicture}%
+}
 
 \lstset{
   basicstyle=\ttfamily\small,
   breaklines=true,
   frame=none,
-  columns=fullflexible
+  columns=fullflexible,
+  aboveskip=0pt,
+  belowskip=0pt
 }
 
 \newcolumntype{L}{>{\raggedright\arraybackslash}p{0.48\textwidth}}
@@ -19,66 +30,97 @@
 \begin{document}
 \pagestyle{empty}
 
-\noindent
-\begingroup
+%% ─── Program 1 ──────────────────────────────────────────────────────────────
+\noindent\begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{longtable}{|p{0.5\textwidth}|p{0.42\textwidth}|}
+%%-- first-head (appears once at top)
 \hline
+\endfirsthead
+%%-- head (repeats on continuation pages)
+\hline
+\endhead
+%%-- foot (appears at bottom of every page except last)
+\hline
+\endfoot
+%%-- last foot (appears at the very end)
+\hline
+\endlastfoot
+%% Header rows
 Program No: 1 & Date: 29/06/2026 \\
 \hline
 \multicolumn{2}{|p{0.94\textwidth}|}{Program Title: Create an app that displays name and email id.} \\
 \hline
-\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\*
+\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\
 \hline
-\multicolumn{2}{|p{0.94\textwidth}|}{
-\lstinputlisting[language=Java]{code/program1/MainActivity.java}
-} \\
+%% Java code – 20 lines per cell so each cell fits on any page
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=Java,linerange={1-20}]{code/program1/MainActivity.java}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=Java,linerange={21-40},firstnumber=21]{code/program1/MainActivity.java}\vspace{-1em}} \\
 \hline
-\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\*
+\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\
 \hline
-\multicolumn{2}{|p{0.94\textwidth}|}{
-\lstinputlisting[language=XML,linerange={1-30}]{code/program1/activity_main.xml}
-} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{
-\lstinputlisting[language=XML,linerange={31-65},firstnumber=31]{code/program1/activity_main.xml}
-} \\
+%% XML code – 20 lines per cell
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={1-20}]{code/program1/activity_main.xml}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={21-40},firstnumber=21]{code/program1/activity_main.xml}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={41-53},firstnumber=41]{code/program1/activity_main.xml}\vspace{-1em}} \\
 \hline
+%% Output
 \multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/1.png} \end{center}} \\
-\hline
 \end{longtable}
 \endgroup
 
 \newpage
 
-\noindent
-\begingroup
+%% ─── Program 2 ──────────────────────────────────────────────────────────────
+\noindent\begingroup
 \renewcommand{\arraystretch}{1.5}
 \begin{longtable}{|p{0.5\textwidth}|p{0.42\textwidth}|}
+%%-- first-head
 \hline
+\endfirsthead
+%%-- head
+\hline
+\endhead
+%%-- foot
+\hline
+\endfoot
+%%-- last foot
+\hline
+\endlastfoot
+%% Header rows
 Program No: 2 & Date: 29/06/2026 \\
 \hline
 \multicolumn{2}{|p{0.94\textwidth}|}{Program Title: Create an app that takes marks of any three subjects from the user and displays its sum and average.} \\
 \hline
-\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\*
+\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\
 \hline
-\multicolumn{2}{|p{0.94\textwidth}|}{
-\lstinputlisting[language=Java,linerange={1-25}]{code/program2/MainActivity.java}
-} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{
-\lstinputlisting[language=Java,linerange={26-55},firstnumber=26]{code/program2/MainActivity.java}
-} \\
+%% Java code – 20 lines per cell
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=Java,linerange={1-20}]{code/program2/MainActivity.java}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=Java,linerange={21-40},firstnumber=21]{code/program2/MainActivity.java}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=Java,linerange={41-48},firstnumber=41]{code/program2/MainActivity.java}\vspace{-1em}} \\
 \hline
-\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\*
+\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\
 \hline
-\multicolumn{2}{|p{0.94\textwidth}|}{
-\lstinputlisting[language=XML,linerange={1-35}]{code/program2/activity_main.xml}
-} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{
-\lstinputlisting[language=XML,linerange={36-80},firstnumber=36]{code/program2/activity_main.xml}
-} \\
+%% XML code – 20 lines per cell
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={1-20}]{code/program2/activity_main.xml}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={21-40},firstnumber=21]{code/program2/activity_main.xml}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={41-60},firstnumber=41]{code/program2/activity_main.xml}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={61-76},firstnumber=61]{code/program2/activity_main.xml}\vspace{-1em}} \\
 \hline
+%% Output
 \multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/2.png} \end{center}} \\
-\hline
 \end{longtable}
 \endgroup
 
