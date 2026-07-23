@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.10)  21 JUL 2026 20:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.10)  21 JUL 2026 21:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -528,27 +528,45 @@ ignored: Infinite glue shrinkage fou
 nd in box being split [5]
 ignored: Infinite glue shrinkage found in box being split [6] [
 7 <./Output_Screenshots/2.png (PNG copy)>]
-(./Android_Lab_Record.aux)
+(./code/program3/MainActivity.java) (./code/program3/MainActivity.java)
+(./code/program3/activity_main.xml) (./code/program3/activity_main.xml)
+(./code/program3/activity_main.xml) (./code/program3/activity_main.xml)
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
+
+ []
+
+<Output_Screenshots/3.png, id=33, 205.76875pt x 399.4925pt>
+File: Output_Screenshots/3.png Graphic file (type png)
+<use Output_Screenshots/3.png>
+Package pdftex.def Info: Output_Screenshots/3.png  used on input line 171.
+(pdftex.def)             Requested size: 203.83417pt x 395.73653pt.
+
+ignored: Infinite glue shrinkage found in box being split [8]
+ignored: Infinite glue shrinkage fou
+nd in box being split [9]
+ignored: Infinite glue shrinkage found in box being split [10] 
+[11 <./Output_Screenshots/3.png>] (./Android_Lab_Record.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 14582 strings out of 469515
- 286208 string characters out of 5470807
- 1264556 words of memory out of 5000000
- 42994 multiletter control sequences out of 15000+600000
- 628663 words of font info for 44 fonts, out of 8000000 for 9000
+ 14639 strings out of 469515
+ 287623 string characters out of 5470807
+ 1264684 words of memory out of 5000000
+ 43037 multiletter control sequences out of 15000+600000
+ 628831 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,9n,94p,420b,1446s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Android_Lab_Record.pdf (7 pages, 1557931 bytes).
+texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmtt10.pfb>
+Output written on Android_Lab_Record.pdf (11 pages, 1589571 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

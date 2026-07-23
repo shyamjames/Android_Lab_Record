@@ -28,7 +28,7 @@
 \newcolumntype{R}{>{\raggedright\arraybackslash}p{0.42\textwidth}}
 
 \begin{document}
-\pagestyle{empty}
+\pagestyle{plain}
 
 %% ─── Program 1 ──────────────────────────────────────────────────────────────
 \noindent\begingroup
@@ -121,6 +121,54 @@ Program No: 2 & Date: 29/06/2026 \\
 \hline
 %% Output
 \multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/2.png} \end{center}} \\
+\end{longtable}
+\endgroup
+
+\newpage
+
+%% ─── Program 3 ──────────────────────────────────────────────────────────────
+\noindent\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{|p{0.5\textwidth}|p{0.42\textwidth}|}
+%%-- first-head
+\hline
+\endfirsthead
+%%-- head
+\hline
+\endhead
+%%-- foot
+\hline
+\endfoot
+%%-- last foot
+\hline
+\endlastfoot
+%% Header rows
+Program No: 3 & Date: 29/06/2026 \\
+\hline
+\multicolumn{2}{|p{0.94\textwidth}|}{Program Title: Create suitable apps to design the different layouts of the androidstudio.} \\
+\hline
+\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\
+\hline
+%% Java code – 20 lines per cell
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=Java,linerange={1-20}]{code/program3/MainActivity.java}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=Java,linerange={21-24},firstnumber=21]{code/program3/MainActivity.java}\vspace{-1em}} \\
+\hline
+\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\
+\hline
+%% XML code – 20 lines per cell
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={1-20}]{code/program3/activity_main.xml}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={21-40},firstnumber=21]{code/program3/activity_main.xml}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={41-60},firstnumber=41]{code/program3/activity_main.xml}\vspace{-1em}} \\
+\multicolumn{2}{|p{0.94\textwidth}|}{%
+\vspace{-1em}\lstinputlisting[language=XML,linerange={61-84},firstnumber=61]{code/program3/activity_main.xml}\vspace{-1em}} \\
+\hline
+%% Output
+\multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/3.png} \end{center}} \\
 \end{longtable}
 \endgroup
 
