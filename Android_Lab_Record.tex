@@ -1131,4 +1131,91 @@ Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Scr
 \end{longtable}
 \endgroup
 
+\newpage
+
+%% ─── Program 11 ──────────────────────────────────────────────
+\noindent\begingroup
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+\rule{0pt}{13pt}Program No: 11 \hfill Date: 29/06/2026 \\
+\hline
+\rule{0pt}{13pt}Program Title: Create an app that plays video from the internet. \\
+\hline
+\rule{0pt}{13pt}\textbf{MainActivity.java:} \\
+\hline
+{\ttfamily\small package\ com.example.pg11\_internetvideo;} \\
+\strut \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ android.widget.VideoView;} \\
+{\ttfamily\small import\ android.net.Uri;} \\
+{\ttfamily\small import\ android.widget.MediaController;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ VideoView\ videoView;} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ Button\ btnVideo\ =\ findViewById(R.id.play);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ videoView\ =\ findViewById(R.id.videoView);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ videoView.setZOrderOnTop(true);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ btnVideo.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ Uri\ uri\ =\ Uri.parse("https://www.learningcontainer.com/"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ "wp-content/uploads/2020/05/"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ "sample-mp4-file.mp4");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ videoView.setVideoURI(uri);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ MediaController\ controller\ =\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\ MediaController(MainActivity.this);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ videoView.setMediaController(controller);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ controller.setAnchorView(videoView);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ videoView.start();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{activity\_main.xml:} \\
+\hline
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:id="@+id/main"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ tools:context=".MainActivity"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}VideoView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/videoView"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="365dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="211dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.493"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.141"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/play"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Play\ Video"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.537"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \textless{}/androidx.constraintlayout.widget.ConstraintLayout\textgreater{}} \\
+\hline
+Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/11_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/11_2.png} \end{center} \\
+\end{longtable}
+\endgroup
+
 \end{document}

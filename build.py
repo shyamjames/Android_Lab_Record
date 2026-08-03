@@ -199,7 +199,18 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/10_2.png}'),
     },
+    {
+        'number': 11,
+        'date': '29/06/2026',
+        'title': 'Create an app that plays video from the internet.',
+        'java': 'code/program11/MainActivity.java',
+        'xml':  'code/program11/activity_main.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/11_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/11_2.png}'),
+    },
 ]
+
 
 
 def build():
