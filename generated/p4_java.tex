@@ -1,0 +1,64 @@
+{\ttfamily\small package\ com.example.pg04\_calculator;} \\
+\strut \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+\strut \\
+{\ttfamily\small import\ androidx.activity.EdgeToEdge;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ androidx.core.graphics.Insets;} \\
+{\ttfamily\small import\ androidx.core.view.ViewCompat;} \\
+{\ttfamily\small import\ androidx.core.view.WindowInsetsCompat;} \\
+{\ttfamily\small import\ android.widget.TextView;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ android.widget.EditText;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ TextView\ result;} \\
+{\ttfamily\small \ \ \ \ Button\ ad,\ sub,\ div,\ mult;} \\
+{\ttfamily\small \ \ \ \ EditText\ no1,\ no2;} \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ EdgeToEdge.enable(this);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ result\ =\ findViewById(R.id.result);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ ad\ =\ findViewById(R.id.ad);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ sub\ =\ findViewById(R.id.sub);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ div\ =\ findViewById(R.id.div);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ mult\ =findViewById(R.id.mult);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ no1\ =\ findViewById(R.id.no1);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ no2\ =\ findViewById(R.id.no2);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ ad.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ a\ =\ Integer.parseInt(no1.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ b\ =\ Integer.parseInt(no2.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ res\ =\ a\ +\ b;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ result.setText(res+"");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ sub.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ a\ =\ Integer.parseInt(no1.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ b\ =\ Integer.parseInt(no2.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ res\ =\ a\ -\ b;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ result.setText(res+"");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ mult.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ a\ =\ Integer.parseInt(no1.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ b\ =\ Integer.parseInt(no2.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ res\ =\ a\ *\ b;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ result.setText(res+"");} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ div.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ a\ =\ Integer.parseInt(no1.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ b\ =\ Integer.parseInt(no2.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ if(b!=0)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ res\ =\ a\ /\ b;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.setText(res+"");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ else} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.setText("Error:\ Divsion\ /\ 0");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\

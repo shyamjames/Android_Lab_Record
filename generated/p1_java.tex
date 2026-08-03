@@ -1,0 +1,39 @@
+{\ttfamily\small package\ com.example.labcycle;} \\
+{\ttfamily\small import\ android.annotation.SuppressLint;} \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ androidx.activity.EdgeToEdge;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ androidx.core.graphics.Insets;} \\
+{\ttfamily\small import\ androidx.core.view.ViewCompat;} \\
+{\ttfamily\small import\ androidx.core.view.WindowInsetsCompat;} \\
+{\ttfamily\small import\ android.view.View;} \\
+{\ttfamily\small import\ android.widget.EditText;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ android.widget.TextView;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ EditText\ name,email;} \\
+{\ttfamily\small \ \ \ \ Button\ btn;} \\
+{\ttfamily\small \ \ \ \ TextView\ t1,t2;} \\
+{\ttfamily\small \ \ \ \ @SuppressLint("MissingInflatedId")} \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ EdgeToEdge.enable(this);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ name\ =\ findViewById(R.id.nametxt);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ email\ =\ findViewById(R.id.emailTxt);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ btn\ =\ findViewById(R.id.btnclick);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ t1\ =\ findViewById(R.id.txtView1);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ t2\ =\ findViewById(R.id.txtView2);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ btn.setOnClickListener(new\ View.OnClickListener()\{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ public\ void\ onClick(View\ view)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ n1\ =\ name.getText().toString();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ n2\ =\ email.getText().toString();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t1.setText(n1);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t2.setText(n2);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\

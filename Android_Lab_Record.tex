@@ -15,306 +15,774 @@
   \end{tikzpicture}%
 }
 
-\lstset{
-  basicstyle=\ttfamily\small,
-  breaklines=true,
-  frame=none,
-  columns=fullflexible,
-  aboveskip=0pt,
-  belowskip=0pt
-}
-
-\newcolumntype{L}{>{\raggedright\arraybackslash}p{0.48\textwidth}}
-\newcolumntype{R}{>{\raggedright\arraybackslash}p{0.42\textwidth}}
-
 \begin{document}
 \pagestyle{plain}
-
-%% ─── Program 1 ──────────────────────────────────────────────────────────────
+%% ─── Program 1 ──────────────────────────────────────────────
 \noindent\begingroup
 \renewcommand{\arraystretch}{1.5}
-\begin{longtable}{|p{0.5\textwidth}|p{0.42\textwidth}|}
-%%-- first-head (appears once at top)
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+Program No: 1 \hfill Date: 29/06/2026 \\
 \hline
-\endfirsthead
-%%-- head (repeats on continuation pages)
+Program Title: Create an app that displays name and email id. \\
 \hline
-\endhead
-%%-- foot (appears at bottom of every page except last)
+\textbf{MainActivity.java:} \\
 \hline
-\endfoot
-%%-- last foot (appears at the very end)
+{\ttfamily\small package\ com.example.labcycle;} \\
+{\ttfamily\small import\ android.annotation.SuppressLint;} \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ androidx.activity.EdgeToEdge;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ androidx.core.graphics.Insets;} \\
+{\ttfamily\small import\ androidx.core.view.ViewCompat;} \\
+{\ttfamily\small import\ androidx.core.view.WindowInsetsCompat;} \\
+{\ttfamily\small import\ android.view.View;} \\
+{\ttfamily\small import\ android.widget.EditText;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ android.widget.TextView;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ EditText\ name,email;} \\
+{\ttfamily\small \ \ \ \ Button\ btn;} \\
+{\ttfamily\small \ \ \ \ TextView\ t1,t2;} \\
+{\ttfamily\small \ \ \ \ @SuppressLint("MissingInflatedId")} \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ EdgeToEdge.enable(this);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ name\ =\ findViewById(R.id.nametxt);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ email\ =\ findViewById(R.id.emailTxt);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ btn\ =\ findViewById(R.id.btnclick);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ t1\ =\ findViewById(R.id.txtView1);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ t2\ =\ findViewById(R.id.txtView2);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ btn.setOnClickListener(new\ View.OnClickListener()\{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ public\ void\ onClick(View\ view)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ n1\ =\ name.getText().toString();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ n2\ =\ email.getText().toString();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t1.setText(n1);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t2.setText(n2);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
 \hline
-\endlastfoot
-%% Header rows
-Program No: 1 & Date: 29/06/2026 \\
+\textbf{activity\_main.xml:} \\
 \hline
-\multicolumn{2}{|p{0.94\textwidth}|}{Program Title: Create an app that displays name and email id.} \\
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout} \\
+{\ttfamily\small \ \ \ \ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \textless{}EditText} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/nametxt"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="250dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:hint="Name"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginTop="150dp"/\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \textless{}EditText} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/emailTxt"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="250dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:hint="Email"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toBottomOf="@id/nametxt"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginTop="16dp"/\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/btnclick"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Click"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toBottomOf="@id/emailTxt"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginTop="20dp"/\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/txtView1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Name"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toBottomOf="@id/btnclick"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginTop="30dp"/\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/txtView2"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Email"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toBottomOf="@id/txtView1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginTop="10dp"/\textgreater{}} \\
+{\ttfamily\small \textless{}/androidx.constraintlayout.widget.ConstraintLayout\textgreater{}} \\
 \hline
-\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\
-\hline
-%% Java code – 20 lines per cell so each cell fits on any page
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={1-20}]{code/program1/MainActivity.java}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={21-40},firstnumber=21]{code/program1/MainActivity.java}\vspace{-1em}} \\
-\hline
-\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\
-\hline
-%% XML code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={1-20}]{code/program1/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={21-40},firstnumber=21]{code/program1/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={41-53},firstnumber=41]{code/program1/activity_main.xml}\vspace{-1em}} \\
-\hline
-%% Output
-\multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/1.png} \end{center}} \\
+Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/1.png} \end{center} \\
 \end{longtable}
 \endgroup
 
 \newpage
 
-%% ─── Program 2 ──────────────────────────────────────────────────────────────
+%% ─── Program 2 ──────────────────────────────────────────────
 \noindent\begingroup
 \renewcommand{\arraystretch}{1.5}
-\begin{longtable}{|p{0.5\textwidth}|p{0.42\textwidth}|}
-%%-- first-head
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+Program No: 2 \hfill Date: 29/06/2026 \\
 \hline
-\endfirsthead
-%%-- head
+Program Title: Create an app that takes marks of any three subjects from the user and displays its sum and average. \\
 \hline
-\endhead
-%%-- foot
+\textbf{MainActivity.java:} \\
 \hline
-\endfoot
-%%-- last foot
+{\ttfamily\small package\ com.example.labcycle;} \\
+\strut \\
+{\ttfamily\small import\ android.annotation.SuppressLint;} \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ androidx.activity.EdgeToEdge;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ androidx.core.graphics.Insets;} \\
+{\ttfamily\small import\ androidx.core.view.ViewCompat;} \\
+{\ttfamily\small import\ androidx.core.view.WindowInsetsCompat;} \\
+{\ttfamily\small import\ android.view.View;} \\
+{\ttfamily\small import\ android.widget.EditText;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ android.widget.TextView;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ EditText\ m1,\ m2,\ m3;} \\
+{\ttfamily\small \ \ \ \ Button\ btn;} \\
+{\ttfamily\small \ \ \ \ TextView\ t1,\ t2;} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @SuppressLint("MissingInflatedId")} \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ EdgeToEdge.enable(this);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ m1\ =\ findViewById(R.id.mark1);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ m2\ =\ findViewById(R.id.mark2);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ m3\ =\ findViewById(R.id.mark3);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ btn\ =\ findViewById(R.id.btncal);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ t1\ =\ findViewById(R.id.textView4);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ t2\ =\ findViewById(R.id.textView5);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ btn.setOnClickListener(new\ View.OnClickListener()\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ public\ void\ onClick(View\ view)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ n1\ =\ Integer.parseInt(m1.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ n2\ =\ Integer.parseInt(m2.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ n3\ =\ Integer.parseInt(m3.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ sums\ =\ n1\ +\ n2\ +\ n3;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ avg\ =\ sums\ /\ 3;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t1.setText("Sum\ is\ "\ +\ sums);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t2.setText("Average\ is\ "\ +\ avg);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
 \hline
-\endlastfoot
-%% Header rows
-Program No: 2 & Date: 29/06/2026 \\
+\textbf{activity\_main.xml:} \\
 \hline
-\multicolumn{2}{|p{0.94\textwidth}|}{Program Title: Create an app that takes marks of any three subjects from the user and displays its sum and average.} \\
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout} \\
+{\ttfamily\small \ \ \ \ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}EditText} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/mark1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginEnd="92dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginBottom="43dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:ems="10"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:inputType="number"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="mark1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toTopOf="@+id/mark2"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}EditText} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/mark2"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginEnd="91dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginBottom="40dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:ems="10"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:inputType="number"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="mark2"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toTopOf="@+id/mark3"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}EditText} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/mark3"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginEnd="85dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginBottom="48dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:ems="10"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:inputType="numberSigned"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="mark3"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toTopOf="@+id/btncal"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/btncal"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginEnd="182dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginBottom="49dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Button"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toTopOf="@+id/textView4"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView4"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginEnd="202dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginBottom="160dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="TextView"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView5"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginEnd="200dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginBottom="120dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="TextView"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \textless{}/androidx.constraintlayout.widget.ConstraintLayout\textgreater{}} \\
 \hline
-\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\
-\hline
-%% Java code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={1-20}]{code/program2/MainActivity.java}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={21-40},firstnumber=21]{code/program2/MainActivity.java}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={41-48},firstnumber=41]{code/program2/MainActivity.java}\vspace{-1em}} \\
-\hline
-\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\
-\hline
-%% XML code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={1-20}]{code/program2/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={21-40},firstnumber=21]{code/program2/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={41-60},firstnumber=41]{code/program2/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={61-76},firstnumber=61]{code/program2/activity_main.xml}\vspace{-1em}} \\
-\hline
-%% Output
-\multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/2.png} \end{center}} \\
+Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/2.png} \end{center} \\
 \end{longtable}
 \endgroup
 
 \newpage
 
-%% ─── Program 3 ──────────────────────────────────────────────────────────────
+%% ─── Program 3 ──────────────────────────────────────────────
 \noindent\begingroup
 \renewcommand{\arraystretch}{1.5}
-\begin{longtable}{|p{0.5\textwidth}|p{0.42\textwidth}|}
-%%-- first-head
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+Program No: 3 \hfill Date: 29/06/2026 \\
 \hline
-\endfirsthead
-%%-- head
+Program Title: Create suitable apps to design the different layouts of the androidstudio. \\
 \hline
-\endhead
-%%-- foot
+\textbf{MainActivity.java:} \\
 \hline
-\endfoot
-%%-- last foot
+{\ttfamily\small package\ com.example.labcycle;} \\
+\strut \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ android.widget.Toast;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ Button\ button1,\ button2,\ button3;} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ button1\ =\ findViewById(R.id.button1);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ button2\ =\ findViewById(R.id.button2);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ button3\ =\ findViewById(R.id.button3);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ button1.setOnClickListener(v\ -\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(this,\ "LinearLayout\ Button\ 1",\ Toast.LENGTH\_SHORT).show());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ button2.setOnClickListener(v\ -\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(this,\ "LinearLayout\ Button\ 2",\ Toast.LENGTH\_SHORT).show());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ button3.setOnClickListener(v\ -\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(this,\ "RelativeLayout\ Button",\ Toast.LENGTH\_SHORT).show());} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
 \hline
-\endlastfoot
-%% Header rows
-Program No: 3 & Date: 29/06/2026 \\
+\textbf{activity\_main.xml:} \\
 \hline
-\multicolumn{2}{|p{0.94\textwidth}|}{Program Title: Create suitable apps to design the different layouts of the androidstudio.} \\
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}ScrollView\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}LinearLayout} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:orientation="vertical"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:padding="16dp"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}!--\ LinearLayout\ --\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="Linear\ Layout"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textStyle="bold"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textSize="18sp"/\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}LinearLayout} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:orientation="horizontal"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_marginBottom="20dp"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/button1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="0dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_weight="1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:text="Button\ 1"/\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/button2"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="0dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_weight="1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:text="Button\ 2"/\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}/LinearLayout\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}!--\ RelativeLayout\ --\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="Relative\ Layout"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textStyle="bold"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textSize="18sp"/\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}RelativeLayout} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="120dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:background="\#DDDDDD"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_marginBottom="20dp"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/text1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:text="Top\ Left"/\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/button3"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:text="Bottom\ Right"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_alignParentBottom="true"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_alignParentEnd="true"/\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}/RelativeLayout\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}!--\ FrameLayout\ --\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="Frame\ Layout"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textStyle="bold"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textSize="18sp"/\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}FrameLayout} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="150dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:background="\#2196F3"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:text="FrameLayout\ Example"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:textColor="\#FFFFFF"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_gravity="center"/\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}/FrameLayout\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \textless{}/LinearLayout\textgreater{}} \\
+{\ttfamily\small \textless{}/ScrollView\textgreater{}} \\
 \hline
-\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\
-\hline
-%% Java code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={1-20}]{code/program3/MainActivity.java}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={21-24},firstnumber=21]{code/program3/MainActivity.java}\vspace{-1em}} \\
-\hline
-\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\
-\hline
-%% XML code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={1-20}]{code/program3/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={21-40},firstnumber=21]{code/program3/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={41-60},firstnumber=41]{code/program3/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={61-84},firstnumber=61]{code/program3/activity_main.xml}\vspace{-1em}} \\
-\hline
-%% Output
-\multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/3.png} \end{center}} \\
+Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/3.png} \end{center} \\
 \end{longtable}
 \endgroup
 
 \newpage
 
-%% ─── Program 4 ──────────────────────────────────────────────────────────────
+%% ─── Program 4 ──────────────────────────────────────────────
 \noindent\begingroup
 \renewcommand{\arraystretch}{1.5}
-\begin{longtable}{|p{0.5\textwidth}|p{0.42\textwidth}|}
-%%-- first-head
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+Program No: 4 \hfill Date: 29/06/2026 \\
 \hline
-\endfirsthead
-%%-- head
+Program Title: Develop a simple calculator app. \\
 \hline
-\endhead
-%%-- foot
+\textbf{MainActivity.java:} \\
 \hline
-\endfoot
-%%-- last foot
+{\ttfamily\small package\ com.example.pg04\_calculator;} \\
+\strut \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+\strut \\
+{\ttfamily\small import\ androidx.activity.EdgeToEdge;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ androidx.core.graphics.Insets;} \\
+{\ttfamily\small import\ androidx.core.view.ViewCompat;} \\
+{\ttfamily\small import\ androidx.core.view.WindowInsetsCompat;} \\
+{\ttfamily\small import\ android.widget.TextView;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ android.widget.EditText;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ TextView\ result;} \\
+{\ttfamily\small \ \ \ \ Button\ ad,\ sub,\ div,\ mult;} \\
+{\ttfamily\small \ \ \ \ EditText\ no1,\ no2;} \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ EdgeToEdge.enable(this);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ result\ =\ findViewById(R.id.result);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ ad\ =\ findViewById(R.id.ad);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ sub\ =\ findViewById(R.id.sub);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ div\ =\ findViewById(R.id.div);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ mult\ =findViewById(R.id.mult);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ no1\ =\ findViewById(R.id.no1);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ no2\ =\ findViewById(R.id.no2);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ ad.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ a\ =\ Integer.parseInt(no1.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ b\ =\ Integer.parseInt(no2.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ res\ =\ a\ +\ b;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ result.setText(res+"");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ sub.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ a\ =\ Integer.parseInt(no1.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ b\ =\ Integer.parseInt(no2.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ res\ =\ a\ -\ b;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ result.setText(res+"");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ mult.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ a\ =\ Integer.parseInt(no1.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ b\ =\ Integer.parseInt(no2.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ res\ =\ a\ *\ b;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ result.setText(res+"");} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ div.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ a\ =\ Integer.parseInt(no1.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ b\ =\ Integer.parseInt(no2.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ if(b!=0)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int\ res\ =\ a\ /\ b;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.setText(res+"");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ else} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.setText("Error:\ Divsion\ /\ 0");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
 \hline
-\endlastfoot
-%% Header rows
-Program No: 4 & Date: 29/06/2026 \\
+\textbf{activity\_main.xml:} \\
 \hline
-\multicolumn{2}{|p{0.94\textwidth}|}{Program Title: Develop a simple calculator app.} \\
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:id="@+id/main"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ tools:context=".MainActivity"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Result:\ "} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="18sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.252"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/result"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="18sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.52"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}EditText} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/no1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:ems="10"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:hint="Enter\ First\ Number"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:inputType="text"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.437"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.228"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}EditText} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/no2"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:ems="10"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:hint="Enter\ Second\ Number"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:inputType="text"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.437"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.355"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/ad"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Add"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.275"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.655"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/sub"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Subtract"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.64"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.655"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/mult"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Multiply"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.275"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.78"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/div"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Division"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.646"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.78"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \textless{}/androidx.constraintlayout.widget.ConstraintLayout\textgreater{}} \\
 \hline
-\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\
-\hline
-%% Java code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={1-20}]{code/program4/MainActivity.java}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={21-40},firstnumber=21]{code/program4/MainActivity.java}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={41-60},firstnumber=41]{code/program4/MainActivity.java}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={61-65},firstnumber=61]{code/program4/MainActivity.java}\vspace{-1em}} \\
-\hline
-\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\
-\hline
-%% XML code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={1-20}]{code/program4/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={21-40},firstnumber=21]{code/program4/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={41-60},firstnumber=41]{code/program4/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={61-80},firstnumber=61]{code/program4/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={81-100},firstnumber=81]{code/program4/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={101-109},firstnumber=101]{code/program4/activity_main.xml}\vspace{-1em}} \\
-\hline
-%% Output
-\multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/4_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/4_2.png} \end{center}} \\
+Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/4_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/4_2.png} \end{center} \\
 \end{longtable}
 \endgroup
 
 \newpage
 
-%% ─── Program 5 ──────────────────────────────────────────────────────────────
+%% ─── Program 5 ──────────────────────────────────────────────
 \noindent\begingroup
 \renewcommand{\arraystretch}{1.5}
-\begin{longtable}{|p{0.5\textwidth}|p{0.42\textwidth}|}
-%%-- first-head
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+Program No: 5 \hfill Date: 29/06/2026 \\
 \hline
-\endfirsthead
-%%-- head
+Program Title: Create an app that changes text color when a button is clicked. \\
 \hline
-\endhead
-%%-- foot
+\textbf{MainActivity.java:} \\
 \hline
-\endfoot
-%%-- last foot
+{\ttfamily\small package\ com.example.pg05\_textcolor;} \\
+\strut \\
+{\ttfamily\small import\ android.graphics.Color;} \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+\strut \\
+{\ttfamily\small import\ androidx.activity.EdgeToEdge;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ androidx.core.graphics.Insets;} \\
+{\ttfamily\small import\ androidx.core.view.ViewCompat;} \\
+{\ttfamily\small import\ androidx.core.view.WindowInsetsCompat;} \\
+{\ttfamily\small import\ android.widget.TextView;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ TextView\ name;} \\
+{\ttfamily\small \ \ \ \ Button\ color;} \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ EdgeToEdge.enable(this);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ color\ =\ findViewById(R.id.color);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ name\ =\ findViewById(R.id.name);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ color.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ name.setTextColor(Color.RED);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
 \hline
-\endlastfoot
-%% Header rows
-Program No: 5 & Date: 29/06/2026 \\
+\textbf{activity\_main.xml:} \\
 \hline
-\multicolumn{2}{|p{0.94\textwidth}|}{Program Title: Create an app that changes text color when a button is clicked.} \\
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:id="@+id/main"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ tools:context=".MainActivity"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/name"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Shyam"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="24sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.498"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.421"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/color"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Change\ Color"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.613"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \textless{}/androidx.constraintlayout.widget.ConstraintLayout\textgreater{}} \\
 \hline
-\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\
-\hline
-%% Java code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={1-20}]{code/program5/MainActivity.java}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={21-30},firstnumber=21]{code/program5/MainActivity.java}\vspace{-1em}} \\
-\hline
-\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\
-\hline
-%% XML code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={1-20}]{code/program5/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={21-35},firstnumber=21]{code/program5/activity_main.xml}\vspace{-1em}} \\
-\hline
-%% Output
-\multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/5_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/5_2.png} \end{center}} \\
+Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/5_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/5_2.png} \end{center} \\
 \end{longtable}
 \endgroup
 
 \newpage
 
-%% ─── Program 6 ──────────────────────────────────────────────────────────────
+%% ─── Program 6 ──────────────────────────────────────────────
 \noindent\begingroup
 \renewcommand{\arraystretch}{1.5}
-\begin{longtable}{|p{0.5\textwidth}|p{0.42\textwidth}|}
-%%-- first-head
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+Program No: 6 \hfill Date: 29/06/2026 \\
 \hline
-\endfirsthead
-%%-- head
+Program Title: Create an app that displays Date and Time in different formats using Linear Layout. \\
 \hline
-\endhead
-%%-- foot
+\textbf{MainActivity.java:} \\
 \hline
-\endfoot
-%%-- last foot
+{\ttfamily\small package\ com.example.pg06\_datetime;} \\
+\strut \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ android.view.View;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ android.widget.TextView;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ java.text.SimpleDateFormat;} \\
+{\ttfamily\small import\ java.util.Date;} \\
+{\ttfamily\small import\ java.util.Locale;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ final\ TextView\ textView1\ =\ findViewById(R.id.textView1);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ final\ TextView\ textView2\ =\ findViewById(R.id.textView2);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ final\ TextView\ textView3\ =\ findViewById(R.id.textView3);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ final\ TextView\ textView4\ =\ findViewById(R.id.textView4);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ Button\ button1\ =\ findViewById(R.id.button1);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ button1.setOnClickListener(new\ View.OnClickListener()\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ public\ void\ onClick(View\ v)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Date\ currentDateTime\ =\ new\ Date();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SimpleDateFormat\ format1\ =\ new\ SimpleDateFormat("EEEE,\ dd\ MMM\ yyyy",\ Locale.getDefault());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SimpleDateFormat\ format2\ =\ new\ SimpleDateFormat("MM/dd/yyyy",\ Locale.getDefault());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SimpleDateFormat\ format3\ =\ new\ SimpleDateFormat("HH:mm:ss\ z",\ Locale.getDefault());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SimpleDateFormat\ format4\ =\ new\ SimpleDateFormat("hh:mm\ a",\ Locale.getDefault());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textView1.setText(format1.format(currentDateTime));} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textView2.setText(format2.format(currentDateTime));} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textView3.setText(format3.format(currentDateTime));} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textView4.setText(format4.format(currentDateTime));} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
 \hline
-\endlastfoot
-%% Header rows
-Program No: 6 & Date: 29/06/2026 \\
+\textbf{activity\_main.xml:} \\
 \hline
-\multicolumn{2}{|p{0.94\textwidth}|}{Program Title: Create an app that displays Date and Time in different formats using Linear Layout.} \\
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}LinearLayout\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:id="@+id/main"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:orientation="vertical"} \\
+{\ttfamily\small \ \ \ \ android:gravity="center"} \\
+{\ttfamily\small \ \ \ \ tools:context=".MainActivity"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="20sp"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView2"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="20sp"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView3"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="20sp"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView4"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="20sp"\ /\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/button1"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Button"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \textless{}/LinearLayout\textgreater{}} \\
 \hline
-\multicolumn{2}{|l|}{\textbf{MainActivity.java:}} \\
-\hline
-%% Java code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={1-20}]{code/program6/MainActivity.java}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=Java,linerange={21-39},firstnumber=21]{code/program6/MainActivity.java}\vspace{-1em}} \\
-\hline
-\multicolumn{2}{|l|}{\textbf{activity\_main.xml:}} \\
-\hline
-%% XML code – 20 lines per cell
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={1-20}]{code/program6/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={21-40},firstnumber=21]{code/program6/activity_main.xml}\vspace{-1em}} \\
-\multicolumn{2}{|p{0.94\textwidth}|}{%
-\vspace{-1em}\lstinputlisting[language=XML,linerange={41-42},firstnumber=41]{code/program6/activity_main.xml}\vspace{-1em}} \\
-\hline
-%% Output
-\multicolumn{2}{|p{0.94\textwidth}|}{Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/6_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/6_2.png} \end{center}} \\
+Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/6_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/6_2.png} \end{center} \\
 \end{longtable}
 \endgroup
 
