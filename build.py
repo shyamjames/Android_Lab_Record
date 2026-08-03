@@ -83,11 +83,11 @@ TABLE_FOOT = r"""\end{longtable}
 """
 
 
-def program_block(number, date, title, java_file, xml_file, output_row):
+def program_block(number, date, title, java_file, xml_file, output_row, menu_xml=None):
     sep = '\n\\hline\n'
     # \rule{0pt}{13pt} is a strut that gives label/header rows extra height
     S = r'\rule{0pt}{13pt}'
-    return (
+    base = (
         TABLE_HEAD
         + f'{S}Program No: {number} \\hfill Date: {date} \\\\\n'
         + '\\hline\n'
@@ -100,10 +100,22 @@ def program_block(number, date, title, java_file, xml_file, output_row):
         + f'{S}\\textbf{{activity\\_main.xml:}} \\\\\n'
         + '\\hline\n'
         + code_rows(xml_file)
-        + sep
+    )
+    
+    if menu_xml:
+        base += (
+            sep
+            + f'{S}\\textbf{{menu.xml:}} \\\\\n'
+            + '\\hline\n'
+            + code_rows(menu_xml)
+        )
+        
+    base += (
+        sep
         + f'Output: \\newline \\begin{{center}} {output_row} \\end{{center}} \\\\\n'
         + TABLE_FOOT
     )
+    return base
 
 
 PROGRAMS = [
@@ -209,6 +221,17 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/11_2.png}'),
     },
+    {
+        'number': 12,
+        'date': '29/06/2026',
+        'title': 'Create an app to demonstrate Options Menu.',
+        'java': 'code/program12/MainActivity.java',
+        'xml':  'code/program12/activity_main.xml',
+        'menu_xml': 'code/program12/menu.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/12_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/12_2.png}'),
+    },
 ]
 
 
@@ -221,7 +244,8 @@ def build():
         parts.append(f'%% ─── Program {prog["number"]} ──────────────────────────────────────────────\n')
         parts.append(program_block(
             prog['number'], prog['date'], prog['title'],
-            prog['java'], prog['xml'], prog['output']
+            prog['java'], prog['xml'], prog['output'], 
+            prog.get('menu_xml')
         ))
     parts.append('\n\\end{document}\n')
 
