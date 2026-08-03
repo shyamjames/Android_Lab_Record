@@ -73,7 +73,7 @@ PREAMBLE = r"""\documentclass[a4paper,12pt]{article}
 """
 
 TABLE_HEAD = r"""\noindent\begingroup
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.1}
 \begin{longtable}{|p{0.94\textwidth}|}
 \hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
 """
@@ -85,17 +85,19 @@ TABLE_FOOT = r"""\end{longtable}
 
 def program_block(number, date, title, java_file, xml_file, output_row):
     sep = '\n\\hline\n'
+    # \rule{0pt}{13pt} is a strut that gives label/header rows extra height
+    S = r'\rule{0pt}{13pt}'
     return (
         TABLE_HEAD
-        + f'Program No: {number} \\hfill Date: {date} \\\\\n'
+        + f'{S}Program No: {number} \\hfill Date: {date} \\\\\n'
         + '\\hline\n'
-        + f'Program Title: {title} \\\\\n'
+        + f'{S}Program Title: {title} \\\\\n'
         + '\\hline\n'
-        + '\\textbf{MainActivity.java:} \\\\\n'
+        + f'{S}\\textbf{{MainActivity.java:}} \\\\\n'
         + '\\hline\n'
         + code_rows(java_file)
         + sep
-        + '\\textbf{activity\\_main.xml:} \\\\\n'
+        + f'{S}\\textbf{{activity\\_main.xml:}} \\\\\n'
         + '\\hline\n'
         + code_rows(xml_file)
         + sep
