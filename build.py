@@ -284,6 +284,18 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/15_2.png}'),
     },
+    {
+        'number': 16,
+        'date': '29/06/2026',
+        'title': 'Create an app that launches a new activity on a button click to display student details with checkbox and radio buttons.',
+        'java': 'code/program16/MainActivity.java',
+        'java_2': 'code/program16/Details.java',
+        'xml':  'code/program16/activity_main.xml',
+        'xml_2': 'code/program16/activity_details.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/16_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/16_2.png}'),
+    },
 ]
 
 

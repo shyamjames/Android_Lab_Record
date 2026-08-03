@@ -1695,4 +1695,368 @@ Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Scr
 \end{longtable}
 \endgroup
 
+\newpage
+
+%% ─── Program 16 ──────────────────────────────────────────────
+\noindent\begingroup
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+\rule{0pt}{13pt}Program No: 16 \hfill Date: 29/06/2026 \\
+\hline
+\rule{0pt}{13pt}Program Title: Create an app that launches a new activity on a button click to display student details with checkbox and radio buttons. \\
+\hline
+\rule{0pt}{13pt}\textbf{MainActivity.java:} \\
+\hline
+{\ttfamily\small package\ com.example.pg16\_studentdetails;} \\
+\strut \\
+{\ttfamily\small import\ android.content.Intent;} \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ android.widget.CheckBox;} \\
+{\ttfamily\small import\ android.widget.EditText;} \\
+{\ttfamily\small import\ android.widget.RadioButton;} \\
+{\ttfamily\small import\ android.widget.RadioGroup;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ Button\ submit\ =\ findViewById(R.id.submit);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ EditText\ name\ =\ findViewById(R.id.name);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ EditText\ mobile\ =\ findViewById(R.id.mobile);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ RadioGroup\ department\ =\ findViewById(R.id.department);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ RadioGroup\ gender\ =\ findViewById(R.id.gender);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ CheckBox\ ai\ =\ findViewById(R.id.ai);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ CheckBox\ cloud\ =\ findViewById(R.id.cloud);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ CheckBox\ auto\ =\ findViewById(R.id.autocad);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ CheckBox\ ship\ =\ findViewById(R.id.ship);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ submit.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ depId\ =\ department.getCheckedRadioButtonId();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ RadioButton\ rdep\ =\ findViewById(depId);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ genId\ =\ gender.getCheckedRadioButtonId();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ RadioButton\ rgen\ =\ findViewById(genId);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ StringBuilder\ sb\ =\ new\ StringBuilder();} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ if\ (ai.isChecked())} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sb.append("AI/ML\textbackslash{}n");} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ if\ (cloud.isChecked())} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sb.append("Cloud\ Computing\textbackslash{}n");} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ if\ (auto.isChecked())} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sb.append("AutoCAD\textbackslash{}n");} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ if\ (ship.isChecked())} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sb.append("Ship\ Technology\textbackslash{}n");} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ Intent\ intent\ =\ new\ Intent(MainActivity.this,\ Details.class);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ intent.putExtra("name",\ name.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ intent.putExtra("mobile",\ mobile.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ intent.putExtra("courses",\ sb.toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ intent.putExtra("department",\ rdep.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ intent.putExtra("gender",\ rgen.getText().toString());} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ startActivity(intent);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{SecondaryActivity.java:} \\
+\hline
+{\ttfamily\small package\ com.example.pg16\_studentdetails;} \\
+\strut \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ android.widget.TextView;} \\
+\strut \\
+{\ttfamily\small public\ class\ Details\ extends\ AppCompatActivity\ \{} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_details);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ String\ name\ =\ getIntent().getStringExtra("name");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ String\ mobile\ =\ getIntent().getStringExtra("mobile");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ String\ department\ =\ getIntent().getStringExtra("department");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ String\ gender\ =\ getIntent().getStringExtra("gender");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ String\ courses\ =\ getIntent().getStringExtra("courses");} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ TextView\ details\ =\ findViewById(R.id.details);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ details.setText("Name:\ "\ +\ name\ +\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "\textbackslash{}nMobile:\ "\ +\ mobile\ +\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "\textbackslash{}nDepartment:\ "\ +\ department\ +\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "\textbackslash{}nGender:\ "\ +\ gender\ +\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "\textbackslash{}nCourses:\textbackslash{}n"\ +\ courses);} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{activity\_main.xml:} \\
+\hline
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:id="@+id/main"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ tools:context=".MainActivity"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="68dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="24dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Name:\ "} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.11"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.077"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Department:\ "} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.119"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.131"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}RadioGroup} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/department"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="314dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="134dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.391"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.207"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}RadioButton} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/cs"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="Computer\ Science"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textSize="16sp"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}RadioButton} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/civil"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="Civil\ Engineering"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textSize="16sp"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}RadioButton} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/mech"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="Mechanical\ Enginneering"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textSize="16sp"\ /\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \textless{}/RadioGroup\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}EditText} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/name"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:ems="10"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:hint="Name"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:inputType="text"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.719"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.076"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView2"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Preferred\ Course:\ "} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.123"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.385"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}CheckBox} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/ai"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="AI/ML"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.133"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.44"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}CheckBox} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/ship"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="127dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="41dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Ship\ Technology"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.133"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.517"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}CheckBox} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/cloud"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="127dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="41dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Cloud\ Computing"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.693"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.44"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}CheckBox} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/autocad"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="127dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="41dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Autocad"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.693"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.517"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView3"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Gender:\ "} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.107"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.585"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}RadioGroup} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/gender"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="318dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="162dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.408"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.775"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}RadioButton} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/male"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="Male"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textSize="16sp"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}RadioButton} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/female"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="Female"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textSize="16sp"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}RadioButton} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/tg"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="TG"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:textSize="16sp"\ /\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \textless{}/RadioGroup\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView5"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Mobile\ No:\ "} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.105"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.861"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}EditText} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/mobile"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:ems="10"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:hint="Mobile\ No."} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:inputType="number"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="16sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.674"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.876"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/submit"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Submit"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.976"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \textless{}/androidx.constraintlayout.widget.ConstraintLayout\textgreater{}} \\
+\hline
+\rule{0pt}{13pt}\textbf{activity\_secondary.xml:} \\
+\hline
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:id="@+id/main"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ tools:context=".Details"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/details"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="20sp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.381"\ /\textgreater{}} \\
+{\ttfamily\small \textless{}/androidx.constraintlayout.widget.ConstraintLayout\textgreater{}} \\
+\hline
+Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/16_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/16_2.png} \end{center} \\
+\end{longtable}
+\endgroup
+
 \end{document}
