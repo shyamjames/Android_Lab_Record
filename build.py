@@ -296,6 +296,18 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/16_2.png}'),
     },
+    {
+        'number': 17,
+        'date': '29/06/2026',
+        'title': 'Create an app that launches a new activity on a button click to calculate and display employee details and salary.',
+        'java': 'code/program17/MainActivity.java',
+        'java_2': 'code/program17/SecondaryActivity.java',
+        'xml':  'code/program17/activity_main.xml',
+        'xml_2': 'code/program17/activity_secondary.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/17_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/17_2.png}'),
+    },
 ]
 
 
