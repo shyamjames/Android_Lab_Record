@@ -181,6 +181,22 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/8_3.png}'),
     },
+    {
+        'number': 9,
+        'date': '29/06/2026',
+        'title': 'Create a Greeting card app that displays an image.',
+        'java': 'code/program9/MainActivity.java',
+        'xml':  'code/program9/activity_main.xml',
+        'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/9.png}',
+    },
+    {
+        'number': 10,
+        'date': '29/06/2026',
+        'title': 'Create an app that plays audio when we click on the button ``Play Music" and plays video when we click on the button ``Play Video".',
+        'java': 'code/program10/MainActivity.java',
+        'xml':  'code/program10/activity_main.xml',
+        'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/10.png}',
+    },
 ]
 
 
