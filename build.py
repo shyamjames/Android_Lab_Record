@@ -161,6 +161,26 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/6_2.png}'),
     },
+    {
+        'number': 7,
+        'date': '29/06/2026',
+        'title': 'Create an app that displays a Toast on the launch of an activity.',
+        'java': 'code/program7/MainActivity.java',
+        'xml':  'code/program7/activity_main.xml',
+        'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/7.png}',
+    },
+    {
+        'number': 8,
+        'date': '29/06/2026',
+        'title': 'Create an app that creates an Alert Dialog Box.',
+        'java': 'code/program8/MainActivity.java',
+        'xml':  'code/program8/activity_main.xml',
+        'output': (r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/8_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/8_2.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/8_3.png}'),
+    },
 ]
 
 
