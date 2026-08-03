@@ -1411,4 +1411,190 @@ Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Scr
 \end{longtable}
 \endgroup
 
+\newpage
+
+%% ─── Program 14 ──────────────────────────────────────────────
+\noindent\begingroup
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+\rule{0pt}{13pt}Program No: 14 \hfill Date: 29/06/2026 \\
+\hline
+\rule{0pt}{13pt}Program Title: Create an app to demonstrate how radiobuttons and checkboxes can be used in android. \\
+\hline
+\rule{0pt}{13pt}\textbf{MainActivity.java:} \\
+\hline
+{\ttfamily\small package\ com.example.radiocheckbox;} \\
+\strut \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ android.widget.RadioGroup;} \\
+{\ttfamily\small import\ android.widget.RadioButton;} \\
+{\ttfamily\small import\ android.widget.CheckBox;} \\
+{\ttfamily\small import\ android.widget.Toast;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ RadioGroup\ gender;} \\
+{\ttfamily\small \ \ \ \ CheckBox\ ten,\ twelve,\ UG,\ PG;} \\
+{\ttfamily\small \ \ \ \ Button\ submit;} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ gender\ =\ findViewById(R.id.gender);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ ten\ =\ findViewById(R.id.ten);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ twelve\ =\ findViewById(R.id.twelve);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ UG\ =\ findViewById(R.id.UG);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ PG\ =\ findViewById(R.id.PG);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ submit\ =\ findViewById(R.id.submit);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ submit.setOnClickListener(v\ -\textgreater{}\{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ int\ selectedId\ =\ gender.getCheckedRadioButtonId();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ RadioButton\ rb\ =\ findViewById(selectedId);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ String\ gen\ =\ rb.getText().toString();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ StringBuilder\ education\ =\ new\ StringBuilder();} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ if\ (ten.isChecked())\ education.append("Tenth\ ");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ if\ (twelve.isChecked())\ education.append("Plus\ Two\ ");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ if\ (UG.isChecked())\ education.append("Undergraduate\ ");} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ if\ (PG.isChecked())\ education.append("Postgraduate\ ");} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(this,\ gen\ +\ "\ |\ "\ +\ education,\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.LENGTH\_LONG).show();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{activity\_main.xml:} \\
+\hline
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:id="@+id/main"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:background="\#FB9E9E"} \\
+{\ttfamily\small \ \ \ \ tools:context=".MainActivity"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView4"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="82dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="23dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Gender:\ "} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.124"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.114"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}RadioGroup} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/gender"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="247dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="143dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.25"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.205"\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}RadioButton} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/male"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="Male"\ /\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}RadioButton} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/female"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="Female"\ /\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \textless{}RadioButton} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:id="@+id/tg"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ android:text="TG"\ /\textgreater{}} \\
+{\ttfamily\small \ \ \ \ \textless{}/RadioGroup\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}CheckBox} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/ten"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="134dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="43dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="X"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.155"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.527"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}CheckBox} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/UG"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="133dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="48dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="UG"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.154"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.71"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}CheckBox} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/twelve"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="134dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="48dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="XII"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.158"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.619"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/submit"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Submit"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.468"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.915"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="90dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="22dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Qualification"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.13"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.452"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}CheckBox} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/PG"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="133dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="48dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="PG"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.154"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.808"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \textless{}/androidx.constraintlayout.widget.ConstraintLayout\textgreater{}} \\
+\hline
+Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/14_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/14_2.png} \end{center} \\
+\end{longtable}
+\endgroup
+
 \end{document}

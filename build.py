@@ -243,6 +243,16 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/13_2.png}'),
     },
+    {
+        'number': 14,
+        'date': '29/06/2026',
+        'title': 'Create an app to demonstrate how radiobuttons and checkboxes can be used in android.',
+        'java': 'code/program14/MainActivity.java',
+        'xml':  'code/program14/activity_main.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/14_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/14_2.png}'),
+    },
 ]
 
 
