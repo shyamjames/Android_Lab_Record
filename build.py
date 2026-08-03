@@ -232,6 +232,17 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/12_2.png}'),
     },
+    {
+        'number': 13,
+        'date': '29/06/2026',
+        'title': 'Create an app that changes the background color of an activity using Context Menu.',
+        'java': 'code/program13/MainActivity.java',
+        'xml':  'code/program13/activity_main.xml',
+        'menu_xml': 'code/program13/menu_main.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/13_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/13_2.png}'),
+    },
 ]
 
 
