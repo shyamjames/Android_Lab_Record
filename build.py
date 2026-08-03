@@ -83,7 +83,7 @@ TABLE_FOOT = r"""\end{longtable}
 """
 
 
-def program_block(number, date, title, java_file, xml_file, output_row, menu_xml=None):
+def program_block(number, date, title, java_file, xml_file, output_row, menu_xml=None, java_file_2=None, xml_file_2=None):
     sep = '\n\\hline\n'
     # \rule{0pt}{13pt} is a strut that gives label/header rows extra height
     S = r'\rule{0pt}{13pt}'
@@ -96,11 +96,30 @@ def program_block(number, date, title, java_file, xml_file, output_row, menu_xml
         + f'{S}\\textbf{{MainActivity.java:}} \\\\\n'
         + '\\hline\n'
         + code_rows(java_file)
-        + sep
+    )
+    
+    if java_file_2:
+        base += (
+            sep
+            + f'{S}\\textbf{{SecondaryActivity.java:}} \\\\\n'
+            + '\\hline\n'
+            + code_rows(java_file_2)
+        )
+        
+    base += (
+        sep
         + f'{S}\\textbf{{activity\\_main.xml:}} \\\\\n'
         + '\\hline\n'
         + code_rows(xml_file)
     )
+    
+    if xml_file_2:
+        base += (
+            sep
+            + f'{S}\\textbf{{activity\\_secondary.xml:}} \\\\\n'
+            + '\\hline\n'
+            + code_rows(xml_file_2)
+        )
     
     if menu_xml:
         base += (
@@ -253,6 +272,18 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/14_2.png}'),
     },
+    {
+        'number': 15,
+        'date': '29/06/2026',
+        'title': 'Create an app that launches a new activity on a button click',
+        'java': 'code/program15/MainActivity.java',
+        'java_2': 'code/program15/SecondaryActivity.java',
+        'xml':  'code/program15/activity_main.xml',
+        'xml_2': 'code/program15/activity_secondary.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/15_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/15_2.png}'),
+    },
 ]
 
 
@@ -266,7 +297,7 @@ def build():
         parts.append(program_block(
             prog['number'], prog['date'], prog['title'],
             prog['java'], prog['xml'], prog['output'], 
-            prog.get('menu_xml')
+            prog.get('menu_xml'), prog.get('java_2'), prog.get('xml_2')
         ))
     parts.append('\n\\end{document}\n')
 

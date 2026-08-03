@@ -100,12 +100,12 @@ Run from the project root:
 
 ```bash
 python3 build.py
-tectonic Android_Lab_Record.tex
+tectonic --chatter minimal Android_Lab_Record.tex
 ```
 
 Or as one line:
 ```bash
-python3 build.py && tectonic Android_Lab_Record.tex
+python3 build.py && tectonic --chatter minimal Android_Lab_Record.tex
 ```
 
 > **Note:** `tectonic` automatically downloads missing LaTeX packages on the first run. Subsequent runs are faster.

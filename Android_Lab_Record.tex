@@ -1597,4 +1597,102 @@ Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Scr
 \end{longtable}
 \endgroup
 
+\newpage
+
+%% ─── Program 15 ──────────────────────────────────────────────
+\noindent\begingroup
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+\rule{0pt}{13pt}Program No: 15 \hfill Date: 29/06/2026 \\
+\hline
+\rule{0pt}{13pt}Program Title: Create an app that launches a new activity on a button click \\
+\hline
+\rule{0pt}{13pt}\textbf{MainActivity.java:} \\
+\hline
+{\ttfamily\small package\ com.example.a2screen\_welcome;} \\
+{\ttfamily\small import\ android.content.Intent;} \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ Button\ btn\ =\ findViewById(R.id.button);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ btn.setOnClickListener(v-\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ Intent\ intent\ =\ new\ Intent(MainActivity.this,\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SecondaryActivity.class);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ startActivity(intent);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{SecondaryActivity.java:} \\
+\hline
+{\ttfamily\small package\ com.example.a2screen\_welcome;} \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+\strut \\
+{\ttfamily\small public\ class\ SecondaryActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_secondary);} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{activity\_main.xml:} \\
+\hline
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:id="@+id/main"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ tools:context=".MainActivity"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/button"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="172dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="74dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Go\ to\ Next\ Page"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintHorizontal\_bias="0.498"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintVertical\_bias="0.558"\ /\textgreater{}} \\
+{\ttfamily\small \textless{}/androidx.constraintlayout.widget.ConstraintLayout\textgreater{}} \\
+\hline
+\rule{0pt}{13pt}\textbf{activity\_secondary.xml:} \\
+\hline
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:id="@+id/main"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:background="\#EF9696"} \\
+{\ttfamily\small \ \ \ \ tools:context=".SecondaryActivity"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/textView"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="66dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="28dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Welcome"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintBottom\_toBottomOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintEnd\_toEndOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintStart\_toStartOf="parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ app:layout\_constraintTop\_toTopOf="parent"\ /\textgreater{}} \\
+{\ttfamily\small \textless{}/androidx.constraintlayout.widget.ConstraintLayout\textgreater{}} \\
+\hline
+Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/15_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/15_2.png} \end{center} \\
+\end{longtable}
+\endgroup
+
 \end{document}
