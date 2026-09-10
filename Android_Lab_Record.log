@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.10)  10 SEP 2026 22:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.10)  10 SEP 2026 22:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1003,6 +1003,19 @@ Package pdftex.def Info: Output_Screenshots/19.png  used on input line 2457.
 ignored: Infinite glue shrinkage found in box being split [70]
 ignored: Infinite glue shrinkage fo
 und in box being split [71] [72 <./Output_Screenshots/19.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 2544--2544
+
+ []
+
+<Output_Screenshots/20.png, id=298, 865.2325pt x 1831.84375pt>
+File: Output_Screenshots/20.png Graphic file (type png)
+<use Output_Screenshots/20.png>
+Package pdftex.def Info: Output_Screenshots/20.png  used on input line 2544.
+(pdftex.def)             Requested size: 203.83417pt x 431.5455pt.
+
+ignored: Infinite glue shrinkage found in box being split [73]
+ignored: Infinite glue shrinkage fo
+und in box being split [74] [75 <./Output_Screenshots/20.png (PNG copy)>]
 (./Android_Lab_Record.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -1014,10 +1027,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 14441 strings out of 469515
- 290135 string characters out of 5470807
- 733131 words of memory out of 5000000
- 42890 multiletter control sequences out of 15000+600000
+ 14455 strings out of 469515
+ 290492 string characters out of 5470807
+ 733213 words of memory out of 5000000
+ 42904 multiletter control sequences out of 15000+600000
  629279 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,9n,94p,420b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1026,10 +1039,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb>
-Output written on Android_Lab_Record.pdf (72 pages, 11564157 bytes).
+Output written on Android_Lab_Record.pdf (75 pages, 12318328 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
- 179 compressed objects within 2 object streams
+ 335 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

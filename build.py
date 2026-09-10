@@ -347,6 +347,16 @@ PROGRAMS = [
         'manifest_xml': 'code/program19/AndroidManifest.xml',
         'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/19.png}',
     },
+    {
+        'number': 20,
+        'date': '29/06/2026',
+        'title': 'Create an app that launches a new activity on a button click.',
+        'java': 'code/program20/MainActivity.java',
+        'receiver_java': 'code/program20/PowerReceiver.java',
+        'xml':  'code/program20/activity_main.xml',
+        'manifest_xml': 'code/program20/AndroidManifest.xml',
+        'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/20.png}',
+    },
 ]
 
 

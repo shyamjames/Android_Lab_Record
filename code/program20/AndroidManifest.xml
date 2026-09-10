@@ -1,0 +1,5 @@
+<receiver
+    android:name=".PowerReceiver"
+    android:enabled="true"
+    android:exported="true">
+</receiver>

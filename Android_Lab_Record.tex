@@ -2458,4 +2458,91 @@ Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Sc
 \end{longtable}
 \endgroup
 
+\newpage
+
+%% ─── Program 20 ──────────────────────────────────────────────
+\noindent\begingroup
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+\rule{0pt}{13pt}Program No: 20 \hfill Date: 29/06/2026 \\
+\hline
+\rule{0pt}{13pt}Program Title: Create an app that launches a new activity on a button click. \\
+\hline
+\rule{0pt}{13pt}\textbf{MainActivity.java:} \\
+\hline
+{\ttfamily\small package\ com.example.batterylow;} \\
+\strut \\
+{\ttfamily\small import\ android.content.Intent;} \\
+{\ttfamily\small import\ android.content.IntentFilter;} \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ PowerReceiver\ receiver\ =\ new\ PowerReceiver();} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ IntentFilter\ filter\ =\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\ IntentFilter(Intent.ACTION\_BATTERY\_CHANGED);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ registerReceiver(receiver,\ filter);} \\
+{\ttfamily\small \ \ \ \ \}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onDestroy()\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onDestroy();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ unregisterReceiver(receiver);} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{PowerReceiver.java:} \\
+\hline
+{\ttfamily\small package\ com.example.batterylow;} \\
+\strut \\
+{\ttfamily\small import\ android.content.BroadcastReceiver;} \\
+{\ttfamily\small import\ android.content.Context;} \\
+{\ttfamily\small import\ android.content.Intent;} \\
+{\ttfamily\small import\ android.os.BatteryManager;} \\
+{\ttfamily\small import\ android.widget.Toast;} \\
+\strut \\
+{\ttfamily\small public\ class\ PowerReceiver\ extends\ BroadcastReceiver\ \{} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ public\ void\ onReceive(Context\ context,\ Intent\ intent)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ int\ level\ =\ intent.getIntExtra(BatteryManager.EXTRA\_LEVEL,\ 0);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ int\ scale\ =\ intent.getIntExtra(BatteryManager.EXTRA\_SCALE,\ 100);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ int\ percent\ =\ level\ *\ 100\ /\ scale;} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ if\ (percent\ \textless{}=\ 15)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(context,\ "Battery\ Low:\ "\ +\ percent\ +\ "\%",\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Toast.LENGTH\_SHORT).show();} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \}} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{activity\_main.xml:} \\
+\hline
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}androidx.constraintlayout.widget.ConstraintLayout} \\
+{\ttfamily\small \ \ \ \ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ xmlns:app="http://schemas.android.com/apk/res-auto"} \\
+{\ttfamily\small \ \ \ \ xmlns:tools="http://schemas.android.com/tools"} \\
+{\ttfamily\small \ \ \ \ android:id="@+id/main"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ tools:context=".MainActivity"\ /\textgreater{}} \\
+\hline
+\rule{0pt}{13pt}\textbf{AndroidManifest.xml:} \\
+\hline
+{\ttfamily\small \textless{}receiver} \\
+{\ttfamily\small \ \ \ \ android:name=".PowerReceiver"} \\
+{\ttfamily\small \ \ \ \ android:enabled="true"} \\
+{\ttfamily\small \ \ \ \ android:exported="true"\textgreater{}} \\
+{\ttfamily\small \textless{}/receiver\textgreater{}} \\
+\hline
+Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/20.png} \end{center} \\
+\end{longtable}
+\endgroup
+
 \end{document}
