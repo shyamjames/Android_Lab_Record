@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.10)  10 SEP 2026 22:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.10)  10 SEP 2026 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -507,10 +507,6 @@ File: Output_Screenshots/1.png Graphic file (type png)
 Package pdftex.def Info: Output_Screenshots/1.png  used on input line 126.
 (pdftex.def)             Requested size: 203.83417pt x 429.5956pt.
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 1 on input line 127.
-
-
 ignored: Infinite glue shrinkage found in box being split [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
@@ -525,10 +521,6 @@ File: Output_Screenshots/2.png Graphic file (type png)
 <use Output_Screenshots/2.png>
 Package pdftex.def Info: Output_Screenshots/2.png  used on input line 269.
 (pdftex.def)             Requested size: 203.83417pt x 392.33823pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 2 on input line 270.
-
 
 ignored: Infinite glue shrinkage found in box being split [4]
 ignored: Infinite glue shrinkage fou
@@ -563,10 +555,6 @@ File: Output_Screenshots/3.png Graphic file (type png)
 Package pdftex.def Info: Output_Screenshots/3.png  used on input line 408.
 (pdftex.def)             Requested size: 203.83417pt x 395.73653pt.
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 3 on input line 409.
-
-
 ignored: Infinite glue shrinkage found in box being split [8]
 ignored: Infinite glue shrinkage fou
 nd in box being split [9]
@@ -592,10 +580,6 @@ File: Output_Screenshots/4_2.png Graphic file (type png)
 <use Output_Screenshots/4_2.png>
 Package pdftex.def Info: Output_Screenshots/4_2.png  used on input line 601.
 (pdftex.def)             Requested size: 181.18439pt x 384.96465pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 4 on input line 602.
-
 
 ignored: Infinite glue shrinkage found in box being split [12]
 ignored: Infinite glue shrinkage fo
@@ -624,10 +608,6 @@ File: Output_Screenshots/5_2.png Graphic file (type png)
 <use Output_Screenshots/5_2.png>
 Package pdftex.def Info: Output_Screenshots/5_2.png  used on input line 685.
 (pdftex.def)             Requested size: 181.18439pt x 394.54506pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 5 on input line 686.
-
 
 ignored: Infinite glue shrinkage found in box being split [17]
 ignored: Infinite glue shrinkage fo
@@ -672,10 +652,6 @@ File: Output_Screenshots/6_2.png Graphic file (type png)
 Package pdftex.def Info: Output_Screenshots/6_2.png  used on input line 785.
 (pdftex.def)             Requested size: 181.18439pt x 372.21724pt.
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 6 on input line 786.
-
-
 ignored: Infinite glue shrinkage found in box being split [20]
 ignored: Infinite glue shrinkage fo
 und in box being split [21] [22 <./Output_Screenshots/6_1.png> <./Output_Screen
@@ -695,10 +671,6 @@ File: Output_Screenshots/7.png Graphic file (type png)
 <use Output_Screenshots/7.png>
 Package pdftex.def Info: Output_Screenshots/7.png  used on input line 845.
 (pdftex.def)             Requested size: 203.83417pt x 434.47864pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 7 on input line 846.
-
 
 ignored: Infinite glue shrinkage found in box being split [23] [24 <./Output_Screenshots
 /7.png (PNG copy)>]
@@ -734,10 +706,6 @@ File: Output_Screenshots/8_3.png Graphic file (type png)
 Package pdftex.def Info: Output_Screenshots/8_3.png  used on input line 925.
 (pdftex.def)             Requested size: 135.89174pt x 287.9793pt.
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 8 on input line 926.
-
-
 ignored: Infinite glue shrinkage found in box being split [25]
 ignored: Infinite glue shrinkage fo
 und in box being split [26] [27 <./Output_Screenshots/8_1.png> <./Output_Screen
@@ -757,10 +725,6 @@ File: Output_Screenshots/9.png Graphic file (type png)
 <use Output_Screenshots/9.png>
 Package pdftex.def Info: Output_Screenshots/9.png  used on input line 1008.
 (pdftex.def)             Requested size: 203.83417pt x 430.40424pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 9 on input line 1009.
-
 
 ignored: Infinite glue shrinkage found in box being split [28]
 ignored: Infinite glue shrinkage fo
@@ -785,10 +749,6 @@ File: Output_Screenshots/10_2.png Graphic file (type png)
 <use Output_Screenshots/10_2.png>
 Package pdftex.def Info: Output_Screenshots/10_2.png  used on input line 1130.
 (pdftex.def)             Requested size: 181.18439pt x 384.02795pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 10 on input line 1131.
-
 
 ignored: Infinite glue shrinkage found in box being split [31]
 ignored: Infinite glue shrinkage fo
@@ -816,10 +776,6 @@ File: Output_Screenshots/11_2.png Graphic file (type png)
 Package pdftex.def Info: Output_Screenshots/11_2.png  used on input line 1217.
 (pdftex.def)             Requested size: 181.18439pt x 383.97906pt.
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 11 on input line 1218.
-
-
 ignored: Infinite glue shrinkage found in box being split [35]
 ignored: Infinite glue shrinkage fo
 und in box being split [36] [37 <./Output_Screenshots/11_1.png> <./Output_Scree
@@ -844,10 +800,6 @@ File: Output_Screenshots/12_2.png Graphic file (type png)
 <use Output_Screenshots/12_2.png>
 Package pdftex.def Info: Output_Screenshots/12_2.png  used on input line 1300.
 (pdftex.def)             Requested size: 181.18439pt x 382.52405pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 12 on input line 1301.
-
 
 ignored: Infinite glue shrinkage found in box being split [38]
 ignored: Infinite glue shrinkage fo
@@ -874,10 +826,6 @@ File: Output_Screenshots/13_2.png Graphic file (type png)
 Package pdftex.def Info: Output_Screenshots/13_2.png  used on input line 1410.
 (pdftex.def)             Requested size: 181.18439pt x 383.40288pt.
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 13 on input line 1411.
-
-
 ignored: Infinite glue shrinkage found in box being split [41]
 ignored: Infinite glue shrinkage fo
 und in box being split [42] [43 <./Output_Screenshots/13_1.png> <./Output_Scree
@@ -902,10 +850,6 @@ File: Output_Screenshots/14_2.png Graphic file (type png)
 <use Output_Screenshots/14_2.png>
 Package pdftex.def Info: Output_Screenshots/14_2.png  used on input line 1596.
 (pdftex.def)             Requested size: 181.18439pt x 383.58176pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 14 on input line 1597.
-
 
 ignored: Infinite glue shrinkage found in box being split [44]
 ignored: Infinite glue shrinkage fo
@@ -940,10 +884,6 @@ File: Output_Screenshots/15_2.png Graphic file (type png)
 <use Output_Screenshots/15_2.png>
 Package pdftex.def Info: Output_Screenshots/15_2.png  used on input line 1694.
 (pdftex.def)             Requested size: 181.18439pt x 383.58176pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 15 on input line 1695.
-
 
 ignored: Infinite glue shrinkage found in box being split [49]
 ignored: Infinite glue shrinkage fo
@@ -982,18 +922,14 @@ und in box being split [53]
 ignored: Infinite glue shrinkage found in box being split [54
 ]
 ignored: Infinite glue shrinkage found in box being split [55]
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 16 on input line 2059.
-
-
-ignored: Infinite glue shrinkage found in box being split [56]
-ignored: Infinite glue shrinkage fo
-und in box being split [57]
-ignored: Infinite glue shrinkage found in box being split [58
-]
-ignored: Infinite glue shrinkage found in box being split [59] [60 <./Output_Screenshot
-s/16_1.png> <./Output_Screenshots/16_2.png>]
+ignored: Infinite glue shrinkage f
+ound in box being split [56]
+ignored: Infinite glue shrinkage found in box being split [5
+7]
+ignored: Infinite glue shrinkage found in box being split [58]
+ignored: Infinite glue shrinkage 
+found in box being split [59] [60 <./Output_Screenshots/16_1.png> <./Output_Scr
+eenshots/16_2.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 2166--2167
 []|\OML/cmtt/m/n/10.95 <\OT1/cmtt/m/n/10.95 androidx.constraintlayout.widget.Co
 nstraintLayout
@@ -1021,10 +957,6 @@ File: Output_Screenshots/17_2.png Graphic file (type png)
 Package pdftex.def Info: Output_Screenshots/17_2.png  used on input line 2272.
 (pdftex.def)             Requested size: 181.18439pt x 383.58176pt.
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 17 on input line 2273.
-
-
 ignored: Infinite glue shrinkage found in box being split [61]
 ignored: Infinite glue shrinkage fo
 und in box being split [62]
@@ -1034,78 +966,43 @@ ignored: Infinite glue shrinkage found in box being split [64]
 ignored: Infinite glue shrinkage f
 ound in box being split [65] [66 <./Output_Screenshots/17_1.png> <./Output_Scre
 enshots/17_2.png>]
-Overfull \hbox (13.63876pt too wide) in paragraph at lines 2298--2299
-[]|    \OT1/cmtt/m/n/10.95 public static final String MY[]ACTION = "com.example
-.broadcast.MY[]ACTION";| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2370--2370
+Underfull \hbox (badness 10000) in paragraph at lines 2371--2371
 
  []
 
 <Output_Screenshots/18_1.png, id=276, 865.2325pt x 1830.84pt>
 File: Output_Screenshots/18_1.png Graphic file (type png)
 <use Output_Screenshots/18_1.png>
-Package pdftex.def Info: Output_Screenshots/18_1.png  used on input line 2370.
+Package pdftex.def Info: Output_Screenshots/18_1.png  used on input line 2371.
 (pdftex.def)             Requested size: 181.18439pt x 383.3703pt.
 <Output_Screenshots/18_2.png, id=277, 865.2325pt x 1830.84pt>
 File: Output_Screenshots/18_2.png Graphic file (type png)
 <use Output_Screenshots/18_2.png>
-Package pdftex.def Info: Output_Screenshots/18_2.png  used on input line 2370.
+Package pdftex.def Info: Output_Screenshots/18_2.png  used on input line 2371.
 (pdftex.def)             Requested size: 181.18439pt x 383.3703pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 18 on input line 2371.
-
 
 ignored: Infinite glue shrinkage found in box being split [67]
 ignored: Infinite glue shrinkage fo
 und in box being split [68] [69 <./Output_Screenshots/18_1.png (PNG copy)> <./O
 utput_Screenshots/18_2.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 2395--2396
+Underfull \hbox (badness 10000) in paragraph at lines 2396--2397
 []|    \OT1/cmtt/m/n/10.95 private final AirplaneModeReceiver receiver = new
  []
 
 
-Overfull \hbox (52.26994pt too wide) in paragraph at lines 2401--2402
-[]|        \OT1/cmtt/m/n/10.95 IntentFilter filter = new IntentFilter(Intent.AC
-TION[]AIRPLANE[]MODE[]CHANGED);| 
- []
-
-
-Overfull \hbox (0.53175pt too wide) in paragraph at lines 2425--2426
-[]|        \OT1/cmtt/m/n/10.95 if (intent.ACTION[]AIRPLANE[]MODE[]CHANGED.equal
-s(intent.getAction()))
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2427--2428
-[]|            \OT1/cmtt/m/n/10.95 String msg = isOn ? "Airplane Mode turned ON
-" : "Airplane Mode
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2453--2453
+Underfull \hbox (badness 10000) in paragraph at lines 2457--2457
 
  []
 
 <Output_Screenshots/19.png, id=288, 865.2325pt x 1831.84375pt>
 File: Output_Screenshots/19.png Graphic file (type png)
 <use Output_Screenshots/19.png>
-Package pdftex.def Info: Output_Screenshots/19.png  used on input line 2453.
+Package pdftex.def Info: Output_Screenshots/19.png  used on input line 2457.
 (pdftex.def)             Requested size: 203.83417pt x 431.5455pt.
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 19 on input line 2454.
-
 
 ignored: Infinite glue shrinkage found in box being split [70]
 ignored: Infinite glue shrinkage fo
 und in box being split [71] [72 <./Output_Screenshots/19.png (PNG copy)>]
-
-Package longtable Warning: Table widths have changed. Rerun LaTeX.
-
 (./Android_Lab_Record.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -1115,24 +1012,21 @@ L3 programming layer <2026-01-19>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  14441 strings out of 469515
  290135 string characters out of 5470807
- 731597 words of memory out of 5000000
+ 733131 words of memory out of 5000000
  42890 multiletter control sequences out of 15000+600000
  629279 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,9n,94p,420b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,94p,420b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb>
-Output written on Android_Lab_Record.pdf (72 pages, 11562355 bytes).
+Output written on Android_Lab_Record.pdf (72 pages, 11564157 bytes).
 PDF statistics:
  323 PDF objects out of 1000 (max. 8388607)
  179 compressed objects within 2 object streams

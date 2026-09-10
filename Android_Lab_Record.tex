@@ -2295,7 +2295,8 @@ Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Scr
 \strut \\
 {\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
 \strut \\
-{\ttfamily\small \ \ \ \ public\ static\ final\ String\ MY\_ACTION\ =\ "com.example.broadcast.MY\_ACTION";} \\
+{\ttfamily\small \ \ \ \ public\ static\ final\ String\ MY\_ACTION\ =\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ "com.example.broadcast.MY\_ACTION";} \\
 \strut \\
 {\ttfamily\small \ \ \ \ @Override} \\
 {\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
@@ -2398,7 +2399,8 @@ Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Scr
 {\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
 {\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
 {\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
-{\ttfamily\small \ \ \ \ \ \ \ \ IntentFilter\ filter\ =\ new\ IntentFilter(Intent.ACTION\_AIRPLANE\_MODE\_CHANGED);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ IntentFilter\ filter\ =\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\ IntentFilter(Intent.ACTION\_AIRPLANE\_MODE\_CHANGED);} \\
 {\ttfamily\small \ \ \ \ \ \ \ \ registerReceiver(receiver,\ filter);} \\
 {\ttfamily\small \ \ \ \ \}} \\
 \strut \\
@@ -2422,9 +2424,11 @@ Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Scr
 \strut \\
 {\ttfamily\small \ \ \ \ @Override} \\
 {\ttfamily\small \ \ \ \ public\ void\ onReceive(Context\ context,\ Intent\ intent)\ \{} \\
-{\ttfamily\small \ \ \ \ \ \ \ \ if\ (intent.ACTION\_AIRPLANE\_MODE\_CHANGED.equals(intent.getAction()))\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ if\ (intent.ACTION\_AIRPLANE\_MODE\_CHANGED.equals(} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ intent.getAction()))\ \{} \\
 {\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ boolean\ isOn\ =\ intent.getBooleanExtra("state",\ false);} \\
-{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ String\ msg\ =\ isOn\ ?\ "Airplane\ Mode\ turned\ ON"\ :\ "Airplane\ Mode\ turned\ OFF";} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ String\ msg\ =\ isOn\ ?\ "Airplane\ Mode\ turned\ ON"\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ "Airplane\ Mode\ turned\ OFF";} \\
 {\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ Toast.makeText(context,\ msg,\ Toast.LENGTH\_SHORT).show();} \\
 {\ttfamily\small \ \ \ \ \ \ \ \ \}} \\
 {\ttfamily\small \ \ \ \ \}} \\
