@@ -7,7 +7,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String MY_ACTION = "com.example.broadcast.MY_ACTION";
+    public static final String MY_ACTION = 
+            "com.example.broadcast.MY_ACTION";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

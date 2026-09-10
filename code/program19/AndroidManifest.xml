@@ -1,0 +1,5 @@
+<receiver
+    android:name=".AirplaneModeReceiver"
+    android:enabled="true"
+    android:exported="true">
+</receiver>

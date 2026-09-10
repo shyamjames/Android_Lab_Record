@@ -107,9 +107,10 @@ def program_block(number, date, title, java_file, xml_file, output_row, menu_xml
         )
         
     if receiver_java:
+        receiver_label = os.path.basename(receiver_java).replace('_', r'\_')
         base += (
             sep
-            + f'{S}\\textbf{{MyReceiver.java:}} \\\\\n'
+            + f'{S}\\textbf{{{receiver_label}:}} \\\\\n'
             + '\\hline\n'
             + code_rows(receiver_java)
         )
@@ -335,6 +336,16 @@ PROGRAMS = [
         'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/18_1.png}'
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/18_2.png}'),
+    },
+    {
+        'number': 19,
+        'date': '29/06/2026',
+        'title': 'Create an app to broadcast a system intent (AIRPLANE MODE CHANGED).',
+        'java': 'code/program19/MainActivity.java',
+        'receiver_java': 'code/program19/AirplaneModeReceiver.java',
+        'xml':  'code/program19/activity_main.xml',
+        'manifest_xml': 'code/program19/AndroidManifest.xml',
+        'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/19.png}',
     },
 ]
 
