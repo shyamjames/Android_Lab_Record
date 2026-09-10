@@ -1,0 +1,18 @@
+venv/
+create_docx.py
+inspect_docx.py
+
+__pycache__/
+*.pyc
+
+# LaTeX artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Generated content
+generated/
