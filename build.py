@@ -83,7 +83,7 @@ TABLE_FOOT = r"""\end{longtable}
 """
 
 
-def program_block(number, date, title, java_file, xml_file, output_row, menu_xml=None, java_file_2=None, xml_file_2=None):
+def program_block(number, date, title, java_file, xml_file, output_row, menu_xml=None, java_file_2=None, xml_file_2=None, receiver_java=None, manifest_xml=None):
     sep = '\n\\hline\n'
     # \rule{0pt}{13pt} is a strut that gives label/header rows extra height
     S = r'\rule{0pt}{13pt}'
@@ -104,6 +104,14 @@ def program_block(number, date, title, java_file, xml_file, output_row, menu_xml
             + f'{S}\\textbf{{SecondaryActivity.java:}} \\\\\n'
             + '\\hline\n'
             + code_rows(java_file_2)
+        )
+        
+    if receiver_java:
+        base += (
+            sep
+            + f'{S}\\textbf{{MyReceiver.java:}} \\\\\n'
+            + '\\hline\n'
+            + code_rows(receiver_java)
         )
         
     base += (
@@ -127,6 +135,14 @@ def program_block(number, date, title, java_file, xml_file, output_row, menu_xml
             + f'{S}\\textbf{{menu.xml:}} \\\\\n'
             + '\\hline\n'
             + code_rows(menu_xml)
+        )
+        
+    if manifest_xml:
+        base += (
+            sep
+            + f'{S}\\textbf{{AndroidManifest.xml:}} \\\\\n'
+            + '\\hline\n'
+            + code_rows(manifest_xml)
         )
         
     base += (
@@ -308,6 +324,18 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/17_2.png}'),
     },
+    {
+        'number': 18,
+        'date': '29/06/2026',
+        'title': 'Create an app to broadcast a custom intent.',
+        'java': 'code/program18/MainActivity.java',
+        'receiver_java': 'code/program18/MyReceiver.java',
+        'xml':  'code/program18/activity_main.xml',
+        'manifest_xml': 'code/program18/AndroidManifest.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/18_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/18_2.png}'),
+    },
 ]
 
 
@@ -321,7 +349,8 @@ def build():
         parts.append(program_block(
             prog['number'], prog['date'], prog['title'],
             prog['java'], prog['xml'], prog['output'], 
-            prog.get('menu_xml'), prog.get('java_2'), prog.get('xml_2')
+            prog.get('menu_xml'), prog.get('java_2'), prog.get('xml_2'),
+            prog.get('receiver_java'), prog.get('manifest_xml')
         ))
     parts.append('\n\\end{document}\n')
 

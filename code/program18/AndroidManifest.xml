@@ -1,0 +1,8 @@
+<receiver
+    android:name=".MyReceiver"
+    android:enabled="true"
+    android:exported="true">
+    <intent-filter>
+        <action android:name="com.example.broadcast.MY_ACTION" />
+    </intent-filter>
+</receiver>
