@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.10)  10 SEP 2026 22:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.9.10)  10 SEP 2026 22:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,7 +1016,54 @@ Package pdftex.def Info: Output_Screenshots/20.png  used on input line 2544.
 ignored: Infinite glue shrinkage found in box being split [73]
 ignored: Infinite glue shrinkage fo
 und in box being split [74] [75 <./Output_Screenshots/20.png (PNG copy)>]
-(./Android_Lab_Record.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 2584--2585
+[]|            \OT1/cmtt/m/n/10.95 PendingIntent pendingIntent = PendingIntent.
+getBroadcast(this,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2587--2588
+[]|            \OT1/cmtt/m/n/10.95 alarmManager.set(AlarmManager.RTC[]WAKEUP, t
+ime,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2605--2606
+[]|        \OT1/cmtt/m/n/10.95 Toast.makeText(context, "Alarm Triggered!",
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2634--2634
+
+ []
+
+<Output_Screenshots/21_1.png, id=309, 865.2325pt x 1830.84pt>
+File: Output_Screenshots/21_1.png Graphic file (type png)
+<use Output_Screenshots/21_1.png>
+Package pdftex.def Info: Output_Screenshots/21_1.png  used on input line 2634.
+(pdftex.def)             Requested size: 181.18439pt x 383.3703pt.
+<Output_Screenshots/21_2.png, id=310, 866.23625pt x 1829.83624pt>
+File: Output_Screenshots/21_2.png Graphic file (type png)
+<use Output_Screenshots/21_2.png>
+Package pdftex.def Info: Output_Screenshots/21_2.png  used on input line 2634.
+(pdftex.def)             Requested size: 181.18439pt x 382.71338pt.
+
+ignored: Infinite glue shrinkage found in box being split [76]
+ignored: Infinite glue shrinkage fo
+und in box being split [77] [78 <./Output_Screenshots/21_1.png (PNG copy)> <./O
+utput_Screenshots/21_2.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 2705--2705
+
+ []
+
+<Output_Screenshots/22.png, id=320, 866.23625pt x 1829.83624pt>
+File: Output_Screenshots/22.png Graphic file (type png)
+<use Output_Screenshots/22.png>
+Package pdftex.def Info: Output_Screenshots/22.png  used on input line 2705.
+(pdftex.def)             Requested size: 203.83417pt x 430.57pt.
+
+ignored: Infinite glue shrinkage found in box being split [79] [80 <./Output_Screenshots
+/22.png (PNG copy)>] (./Android_Lab_Record.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1027,10 +1074,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 14455 strings out of 469515
- 290492 string characters out of 5470807
- 733213 words of memory out of 5000000
- 42904 multiletter control sequences out of 15000+600000
+ 14488 strings out of 469515
+ 291417 string characters out of 5470807
+ 733356 words of memory out of 5000000
+ 42937 multiletter control sequences out of 15000+600000
  629279 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,9n,94p,420b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1039,10 +1086,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb>
-Output written on Android_Lab_Record.pdf (75 pages, 12318328 bytes).
+Output written on Android_Lab_Record.pdf (80 pages, 14797335 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
+ 354 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 183 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 198 words of extra memory for PDF output out of 10000 (max. 10000000)
 

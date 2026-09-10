@@ -2545,4 +2545,165 @@ Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Sc
 \end{longtable}
 \endgroup
 
+\newpage
+
+%% ─── Program 21 ──────────────────────────────────────────────
+\noindent\begingroup
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+\rule{0pt}{13pt}Program No: 21 \hfill Date: 29/06/2026 \\
+\hline
+\rule{0pt}{13pt}Program Title: Create an alarm application. \\
+\hline
+\rule{0pt}{13pt}\textbf{MainActivity.java:} \\
+\hline
+{\ttfamily\small package\ com.example.pg20\_alarmapp;} \\
+\strut \\
+{\ttfamily\small import\ android.app.AlarmManager;} \\
+{\ttfamily\small import\ android.app.PendingIntent;} \\
+{\ttfamily\small import\ android.content.Intent;} \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ android.widget.Button;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+{\ttfamily\small \ \ \ \ Button\ btnAlarm;} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ btnAlarm\ =\ findViewById(R.id.btnAlarm);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ btnAlarm.setOnClickListener(v\ -\textgreater{}\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ AlarmManager\ alarmManager\ =\ (AlarmManager)\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getSystemService(ALARM\_SERVICE);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ Intent\ intent\ =\ new\ Intent(MainActivity.this,\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AlarmReceiver.class);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ PendingIntent\ pendingIntent\ =\ PendingIntent.getBroadcast(this,\ 0,\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ intent,\ PendingIntent.FLAG\_IMMUTABLE);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ long\ time\ =\ System.currentTimeMillis()\ +\ 10000;\ //\ 10\ seconds} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ alarmManager.set(AlarmManager.RTC\_WAKEUP,\ time,\ pendingIntent);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \});} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{AlarmReceiver.java:} \\
+\hline
+{\ttfamily\small package\ com.example.pg20\_alarmapp;} \\
+\strut \\
+{\ttfamily\small import\ android.content.BroadcastReceiver;} \\
+{\ttfamily\small import\ android.content.Context;} \\
+{\ttfamily\small import\ android.content.Intent;} \\
+{\ttfamily\small import\ android.widget.Toast;} \\
+\strut \\
+{\ttfamily\small public\ class\ AlarmReceiver\ extends\ BroadcastReceiver\ \{} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ public\ void\ onReceive(Context\ context,\ Intent\ intent)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ Toast.makeText(context,\ "Alarm\ Triggered!",\ Toast.LENGTH\_LONG).show();} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{activity\_main.xml:} \\
+\hline
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}LinearLayout} \\
+{\ttfamily\small \ \ \ \ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:gravity="center"} \\
+{\ttfamily\small \ \ \ \ android:orientation="vertical"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}Button} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/btnAlarm"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Set\ Alarm"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \textless{}/LinearLayout\textgreater{}} \\
+\hline
+\rule{0pt}{13pt}\textbf{AndroidManifest.xml:} \\
+\hline
+{\ttfamily\small \textless{}receiver} \\
+{\ttfamily\small \ \ \ \ android:name=".AlarmReceiver"} \\
+{\ttfamily\small \ \ \ \ android:enabled="true"} \\
+{\ttfamily\small \ \ \ \ android:exported="false"\ /\textgreater{}} \\
+\hline
+Output: \newline \begin{center} \includegraphics[width=0.4\textwidth]{Output_Screenshots/21_1.png} \quad \includegraphics[width=0.4\textwidth]{Output_Screenshots/21_2.png} \end{center} \\
+\end{longtable}
+\endgroup
+
+\newpage
+
+%% ─── Program 22 ──────────────────────────────────────────────
+\noindent\begingroup
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{|p{0.94\textwidth}|}
+\hline\endfirsthead\hline\endhead\hline\endfoot\hline\endlastfoot
+\rule{0pt}{13pt}Program No: 22 \hfill Date: 29/06/2026 \\
+\hline
+\rule{0pt}{13pt}Program Title: Create an app that displays a simple ListView. (Contacts list). \\
+\hline
+\rule{0pt}{13pt}\textbf{MainActivity.java:} \\
+\hline
+{\ttfamily\small package\ com.example.contactlist;} \\
+\strut \\
+{\ttfamily\small import\ android.os.Bundle;} \\
+{\ttfamily\small import\ android.widget.ArrayAdapter;} \\
+{\ttfamily\small import\ android.widget.ListView;} \\
+{\ttfamily\small import\ androidx.appcompat.app.AppCompatActivity;} \\
+\strut \\
+{\ttfamily\small public\ class\ MainActivity\ extends\ AppCompatActivity\ \{} \\
+\strut \\
+{\ttfamily\small \ \ \ \ @Override} \\
+{\ttfamily\small \ \ \ \ protected\ void\ onCreate(Bundle\ savedInstanceState)\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ super.onCreate(savedInstanceState);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ setContentView(R.layout.activity\_main);} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ String[]\ contacts\ =\ \{} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ "Albin\ -\ 9876543210",\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ "Shyam\ -\ 9123456780",\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ "Jubin\ -\ 9988776655",} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ "Sharvin\ -\ 9876501234",\ } \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ "Anandhu\ -\ 9012345678"} \\
+{\ttfamily\small \ \ \ \ \};} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \ \ \ \ ListView\ listView\ =\ findViewById(R.id.listview);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ ArrayAdapter\textless{}String\textgreater{}\ adapter\ =\ new\ ArrayAdapter\textless{}\textgreater{}(this,} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ android.R.layout.simple\_list\_item\_1,\ contacts);} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ listView.setAdapter(adapter);} \\
+{\ttfamily\small \ \ \ \ \}} \\
+{\ttfamily\small \}} \\
+\hline
+\rule{0pt}{13pt}\textbf{activity\_main.xml:} \\
+\hline
+{\ttfamily\small \textless{}?xml\ version="1.0"\ encoding="utf-8"?\textgreater{}} \\
+{\ttfamily\small \textless{}LinearLayout\ xmlns:android="http://schemas.android.com/apk/res/android"} \\
+{\ttfamily\small \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:layout\_height="match\_parent"} \\
+{\ttfamily\small \ \ \ \ android:orientation="vertical"} \\
+{\ttfamily\small \ \ \ \ android:padding="16dp"\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}TextView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="wrap\_content"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_gravity="center"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_marginTop="40dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:text="Contact\ List"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:textSize="24sp"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \ \ \ \ \textless{}ListView} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:id="@+id/listview"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_width="match\_parent"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_height="0dp"} \\
+{\ttfamily\small \ \ \ \ \ \ \ \ android:layout\_weight="1"\ /\textgreater{}} \\
+\strut \\
+{\ttfamily\small \textless{}/LinearLayout\textgreater{}} \\
+\hline
+Output: \newline \begin{center} \includegraphics[width=0.45\textwidth]{Output_Screenshots/22.png} \end{center} \\
+\end{longtable}
+\endgroup
+
 \end{document}

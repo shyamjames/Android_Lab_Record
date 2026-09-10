@@ -357,6 +357,26 @@ PROGRAMS = [
         'manifest_xml': 'code/program20/AndroidManifest.xml',
         'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/20.png}',
     },
+    {
+        'number': 21,
+        'date': '29/06/2026',
+        'title': 'Create an alarm application.',
+        'java': 'code/program21/MainActivity.java',
+        'receiver_java': 'code/program21/AlarmReceiver.java',
+        'xml':  'code/program21/activity_main.xml',
+        'manifest_xml': 'code/program21/AndroidManifest.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/21_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/21_2.png}'),
+    },
+    {
+        'number': 22,
+        'date': '29/06/2026',
+        'title': 'Create an app that displays a simple ListView. (Contacts list).',
+        'java': 'code/program22/MainActivity.java',
+        'xml':  'code/program22/activity_main.xml',
+        'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/22.png}',
+    },
 ]
 
 
