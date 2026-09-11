@@ -1,6 +1,9 @@
 venv/
 create_docx.py
 inspect_docx.py
+extract_programs.py
+parse_jubin.py
+jubin_parsed.txt
 
 __pycache__/
 *.pyc

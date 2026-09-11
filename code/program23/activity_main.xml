@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".MainActivity">
+
+<TextView android:id="@+id/tvTitle"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content" android:text="Customer Order Entry" android:textSize="22sp" android:textStyle="bold"
+app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.441" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.079" />
+
+<CheckBox android:id="@+id/burger"
+android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Burger (₹150)" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.134" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.746" />
+
+<TextView android:id="@+id/tvMobile"
+android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mobile Number:" android:textSize="16sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.13" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.283" />
+<RadioGroup android:id="@+id/mealtype" android:layout_width="320dp"
+android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.417" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.491">
+
+<RadioButton android:id="@+id/veg"
+android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Vegetarian" />
+
+<RadioButton android:id="@+id/nonveg" android:layout_width="wrap_content"
+android:layout_height="wrap_content" android:layout_marginStart="20dp" android:text="Non-Vegetarian" />
+</RadioGroup>
+
+<CheckBox android:id="@+id/softdrink"
+android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Soft Drink (₹60)" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.754" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.746" />
+
+<CheckBox android:id="@+id/pizza"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Pizza (₹250)" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.13" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.645" />
+
+<EditText android:id="@+id/mobile" android:layout_width="320dp"
+android:layout_height="wrap_content" android:hint="Enter Mobile Number" android:inputType="number" android:maxLength="10" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.417" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.336" />
+
+<TextView android:id="@+id/tvFood"
+android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Food Items:" android:textSize="16sp"
+app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.116" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.562" />
+
+<EditText android:id="@+id/name" android:layout_width="320dp"
+android:layout_height="wrap_content"
+android:hint="Enter Name" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.428" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.212" />
+
+<CheckBox android:id="@+id/sandwich"
+android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sandwich (₹120)" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.774" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.645" />
+
+<TextView android:id="@+id/tvMeal"
+android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Meal Type:" android:textSize="16sp"
+app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.113" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.418" />
+
+<TextView android:id="@+id/tvName"
+android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Customer Name:"
+android:textSize="16sp"
+app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.13" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.152" />
+
+<Button android:id="@+id/placeOrder"
+android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Place Order" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.444" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.869" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

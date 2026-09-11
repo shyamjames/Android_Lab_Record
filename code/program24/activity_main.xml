@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".MainActivity">
+
+<CheckBox android:id="@+id/xray" android:layout_width="320dp"
+android:layout_height="wrap_content" android:text="X-Ray Scan (₹800)" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.494" app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/bloodtest" app:layout_constraintVertical_bias="0.0" />
+
+<Button android:id="@+id/next"
+android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Next ->" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/mri" app:layout_constraintVertical_bias="0.472" />
+
+<EditText android:id="@+id/age"
+android:layout_width="320dp"
+android:layout_height="wrap_content"
+android:hint="Enter Age" android:inputType="number" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.505" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/name" app:layout_constraintVertical_bias="0.012" />
+
+<TextView android:id="@+id/lblgender" android:layout_width="320dp"
+android:layout_height="wrap_content" android:text="Gender:" android:textSize="15sp"
+app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.505" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/age" app:layout_constraintVertical_bias="0.0" />
+
+<CheckBox android:id="@+id/consultation" android:layout_width="320dp" android:layout_height="wrap_content" android:text="General Checkup (₹300)"
+app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.494" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/services" app:layout_constraintVertical_bias="0.0" />
+
+<CheckBox android:id="@+id/bloodtest" android:layout_width="320dp"
+android:layout_height="wrap_content"
+android:text="Blood Test (₹500)"
+app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.494" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/consultation" app:layout_constraintVertical_bias="0.0" />
+
+<CheckBox android:id="@+id/mri" android:layout_width="320dp"
+android:layout_height="wrap_content" android:text="MRI Scan (₹2500)" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.494" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/xray" app:layout_constraintVertical_bias="0.0" />
+
+<EditText android:id="@+id/id"
+android:layout_width="320dp" android:layout_height="wrap_content" android:hint="Enter Patient ID (e.g. P101)" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.505" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/title" app:layout_constraintVertical_bias="0.043" />
+
+<RadioGroup android:id="@+id/gender" android:layout_width="320dp"
+android:layout_height="wrap_content" android:orientation="horizontal" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.494"
