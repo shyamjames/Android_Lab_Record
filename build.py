@@ -377,6 +377,79 @@ PROGRAMS = [
         'xml':  'code/program22/activity_main.xml',
         'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/22.png}',
     },
+    {
+        'number': 23,
+        'date': '07/08/2026',
+        'title': 'Develop an Android application in Java that enables customers to place a food order, view the order summary, and generate the final bill using three activities',
+        'java': 'code/program23/MainActivity.java',
+        'java_2': 'code/program23/SecondActivity.java',
+        'receiver_java': 'code/program23/InvoiceActivity.java',
+        'xml':  'code/program23/activity_main.xml',
+        'xml_2': 'code/program23/activity_summary.xml',
+        'manifest_xml': 'code/program23/activity_Invoice.xml',
+        'output': (r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/23_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/23_2.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/23_3.png}'),
+    },
+    {
+        'number': 24,
+        'date': '07/08/2026',
+        'title': 'Develop an Android application using Java consisting of three activities. The application must use Explicit Intents, Intent Extras, RadioButtons, CheckBoxes, Options Menu.',
+        'java': 'code/program24/MainActivity.java',
+        'java_2': 'code/program24/DepartmentActivity.java',
+        'receiver_java': 'code/program24/BillActivity.java',
+        'xml':  'code/program24/activity_main.xml',
+        'xml_2': 'code/program24/activity_second.xml',
+        'menu_xml': 'code/program24/activity_department.xml',
+        'manifest_xml': 'code/program24/activity_bill.xml',
+        'extra_files': ['code/program24/options_menu.xml'],
+        'output': (r'\includegraphics[width=0.22\textwidth]{Output_Screenshots/24_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.22\textwidth]{Output_Screenshots/24_2.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.22\textwidth]{Output_Screenshots/24_3.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.22\textwidth]{Output_Screenshots/24_4.png}'),
+    },
+    {
+        'number': 25,
+        'date': '09/09/2026',
+        'title': 'Create an app to perform Insert, Update, Delete and View operations on Employee database using SQLite.',
+        'java': 'code/program25/MainActivity.java',
+        'java_2': 'code/program25/DatabaseHelper.java',
+        'xml':  'code/program25/activity_main.xml',
+        'output': (r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/25_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/25_2.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/25_3.png}'),
+    },
+    {
+        'number': 26,
+        'date': '09/09/2026',
+        'title': 'Create an app to perform Insert, update, Delete and View operations on Product details using SQLite database.',
+        'java': 'code/program26/MainActivity.java',
+        'java_2': 'code/program26/DBHelper.java',
+        'xml':  'code/program26/activity_main.xml',
+        'output': (r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/26_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/26_2.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.3\textwidth]{Output_Screenshots/26_3.png}'),
+    },
+    {
+        'number': 27,
+        'date': '12/09/2026',
+        'title': 'Create an app to display product details using GridView and ListView from SQLite database.',
+        'java': 'code/program27/MainActivity.java',
+        'java_2': 'code/program27/DBHelper.java',
+        'xml':  'code/program27/activity_main.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/27_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/27_2.png}'),
+    },
 ]
 
 
