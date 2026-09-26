@@ -83,7 +83,7 @@ TABLE_FOOT = r"""\end{longtable}
 """
 
 
-def program_block(number, date, title, java_file, xml_file, output_row, menu_xml=None, java_file_2=None, xml_file_2=None, receiver_java=None, manifest_xml=None):
+def program_block(number, date, title, java_file=None, xml_file=None, output_row=None, menu_xml=None, java_file_2=None, xml_file_2=None, receiver_java=None, manifest_xml=None):
     sep = '\n\\hline\n'
     # \rule{0pt}{13pt} is a strut that gives label/header rows extra height
     S = r'\rule{0pt}{13pt}'
@@ -91,12 +91,16 @@ def program_block(number, date, title, java_file, xml_file, output_row, menu_xml
         TABLE_HEAD
         + f'{S}Program No: {number} \\hfill Date: {date} \\\\\n'
         + '\\hline\n'
-        + f'{S}Program Title: {title} \\\\\n'
+        + f'{S}Program Title : {title} \\\\\n'
         + '\\hline\n'
-        + f'{S}\\textbf{{MainActivity.java:}} \\\\\n'
-        + '\\hline\n'
-        + code_rows(java_file)
     )
+    
+    if java_file:
+        base += (
+            f'{S}\\textbf{{MainActivity.java:}} \\\\\n'
+            + '\\hline\n'
+            + code_rows(java_file)
+        )
     
     if java_file_2:
         base += (
@@ -115,12 +119,13 @@ def program_block(number, date, title, java_file, xml_file, output_row, menu_xml
             + code_rows(receiver_java)
         )
         
-    base += (
-        sep
-        + f'{S}\\textbf{{activity\\_main.xml:}} \\\\\n'
-        + '\\hline\n'
-        + code_rows(xml_file)
-    )
+    if xml_file:
+        base += (
+            sep
+            + f'{S}\\textbf{{activity\\_main.xml:}} \\\\\n'
+            + '\\hline\n'
+            + code_rows(xml_file)
+        )
     
     if xml_file_2:
         base += (
@@ -146,11 +151,20 @@ def program_block(number, date, title, java_file, xml_file, output_row, menu_xml
             + code_rows(manifest_xml)
         )
         
-    base += (
-        sep
-        + f'Output: \\newline \\begin{{center}} {output_row} \\end{{center}} \\\\\n'
-        + TABLE_FOOT
-    )
+    if java_file or xml_file or manifest_xml:
+        base += (
+            sep
+            + f'Output: \\newline \\begin{{center}} {output_row} \\end{{center}} \\\\\n'
+            + TABLE_FOOT
+        )
+    else:
+        # Format for when there is no code (e.g. Program 35)
+        base += (
+            f'{S}\\textbf{{Screenshots}} \\\\\n'
+            + '\\hline\n'
+            + f'\\begin{{center}} {output_row} \\end{{center}} \\\\\n'
+            + TABLE_FOOT
+        )
     return base
 
 
@@ -450,6 +464,87 @@ PROGRAMS = [
                    r' \quad '
                    r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/27_2.png}'),
     },
+    {
+        'number': 28,
+        'date': '20/06/2026',
+        'title': 'Create an app to demonstrate counter.',
+        'java': 'code/program28/MainActivity.java',
+        'xml':  'code/program28/activity_main.xml',
+        'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/28_1.png}',
+    },
+    {
+        'number': 29,
+        'date': '20/06/2026',
+        'title': 'Create an app to convert text to speech.',
+        'java': 'code/program29/MainActivity.java',
+        'xml':  'code/program29/activity_main.xml',
+        'output': r'\includegraphics[width=0.45\textwidth]{Output_Screenshots/29_1.png}',
+    },
+    {
+        'number': 30,
+        'date': '20/06/2026',
+        'title': 'Create an app to perform asynchronous tasks.',
+        'java': 'code/program30/MainActivity.java',
+        'xml':  'code/program30/activity_main.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/30_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/30_2.png}'),
+    },
+    {
+        'number': 31,
+        'date': '20/06/2026',
+        'title': 'Create an app that displays name and email id.',
+        'java': 'code/program31/HomeActivity.java',
+        'java_2': 'code/program31/DBHelper.java',
+        'xml':  'code/program31/activity_home.xml',
+        'xml_2': 'code/program31/activity_login.xml',
+        'receiver_java': 'code/program31/LoginActivity.java',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/31_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/31_2.png}'),
+    },
+    {
+        'number': 32,
+        'date': '20/06/2026',
+        'title': 'Create an app to turn on and off the flashlight',
+        'java': 'code/program32/MainActivity.java',
+        'xml':  'code/program32/activity_main.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/32_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/32_2.png}'),
+    },
+    {
+        'number': 33,
+        'date': '20/06/2026',
+        'title': 'Create an app to change the background color when the phone is shaked or tilted.',
+        'java': 'code/program33/MainActivity.java',
+        'xml':  'code/program33/activity_main.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/33_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/33_2.png}'),
+    },
+    {
+        'number': 34,
+        'date': '20/06/2026',
+        'title': 'Create an app to i) Send an SMS. ii) Send an email. iii) To make a call',
+        'java': 'code/program34/MainActivity.java',
+        'xml':  'code/program34/activity_main.xml',
+        'output': (r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/34_1.png}'
+                   r' \quad '
+                   r'\includegraphics[width=0.4\textwidth]{Output_Screenshots/34_2.png}'),
+    },
+    {
+        'number': 35,
+        'date': '25/09/2026',
+        'title': 'Swipiee - An Interactive Swipe-Based Photo Organizer',
+        'output': (r'\includegraphics[width=0.22\textwidth]{Output_Screenshots/35_1.jpeg}'
+                   r' \quad '
+                   r'\includegraphics[width=0.22\textwidth]{Output_Screenshots/35_2.jpeg}'
+                   r' \quad '
+                   r'\includegraphics[width=0.22\textwidth]{Output_Screenshots/35_3.jpeg}'
+                   r' \quad '
+                   r'\includegraphics[width=0.22\textwidth]{Output_Screenshots/35_4.jpeg}'),
+    },
 ]
 
 
@@ -462,7 +557,7 @@ def build():
         parts.append(f'%% ─── Program {prog["number"]} ──────────────────────────────────────────────\n')
         parts.append(program_block(
             prog['number'], prog['date'], prog['title'],
-            prog['java'], prog['xml'], prog['output'], 
+            prog.get('java'), prog.get('xml'), prog.get('output'), 
             prog.get('menu_xml'), prog.get('java_2'), prog.get('xml_2'),
             prog.get('receiver_java'), prog.get('manifest_xml')
         ))

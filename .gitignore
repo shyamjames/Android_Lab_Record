@@ -4,6 +4,7 @@ inspect_docx.py
 extract_programs.py
 parse_jubin.py
 jubin_parsed.txt
+.~lock.Android_Lab_Record.docx#
 
 __pycache__/
 *.pyc
