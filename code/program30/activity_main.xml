@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center"
+android:padding="24dp">
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Async Task Demo"
+android:textSize="22sp"
+android:textStyle="bold"
+android:paddingBottom="30dp"/>
+<TextView
+android:id="@+id/tvStatus"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Press Start to begin task"
+android:textSize="16sp"
+
+
+android:paddingBottom="20dp"/>
+<ProgressBar
+android:id="@+id/progressBar"
+style="?android:attr/progressBarStyleHorizontal"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:max="100"
+android:progress="0"
+android:paddingBottom="10dp"/>
+<TextView
+android:id="@+id/tvProgress"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0%"
+android:textSize="18sp"
+android:paddingBottom="30dp"/>
+<Button
+android:id="@+id/btnStart"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Start Task"/>
+</LinearLayout>

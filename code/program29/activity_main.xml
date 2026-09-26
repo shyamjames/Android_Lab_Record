@@ -1,0 +1,76 @@
+package com.example.texttospeech;
+import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.text.TextUtils;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import java.util.Locale;
+public class MainActivity extends AppCompatActivity implements
+
+TextToSpeech.OnInitListener {
+EditText etText;
+Button btnSpeak, btnStop;
+TextToSpeech textToSpeech;
+boolean isTtsReady = false;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+etText = findViewById(R.id.etText);
+btnSpeak = findViewById(R.id.btnSpeak);
+btnStop = findViewById(R.id.btnStop);
+// Initialize TextToSpeech engine
+textToSpeech = new TextToSpeech(this, this);
+btnSpeak.setOnClickListener(v -> speakText());
+btnStop.setOnClickListener(v -> {
+if (textToSpeech != null && textToSpeech.isSpeaking()) {
+textToSpeech.stop();
+}
+});
+}
+// Called once the TTS engine is initialized
+@Override
+public void onInit(int status) {
+if (status == TextToSpeech.SUCCESS) {
+
+int result = textToSpeech.setLanguage(Locale.US);
+if (result == TextToSpeech.LANG_MISSING_DATA || result ==
+TextToSpeech.LANG_NOT_SUPPORTED) {
+Toast.makeText(this, "Language not supported",
+Toast.LENGTH_SHORT).show();
+} else {
+isTtsReady = true;
+}
+} else {
+Toast.makeText(this, "TTS initialization failed",
+Toast.LENGTH_SHORT).show();
+}
+}
+private void speakText() {
+String text = etText.getText().toString().trim();
+if (TextUtils.isEmpty(text)) {
+Toast.makeText(this, "Please enter some text",
+Toast.LENGTH_SHORT).show();
+return;
+}
+if (!isTtsReady) {
+Toast.makeText(this, "TTS engine not ready yet",
+Toast.LENGTH_SHORT).show();
+return;
+}
+
+
+textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+}
+@Override
+protected void onDestroy() {
+// Release TTS resources
+if (textToSpeech != null) {
+textToSpeech.stop();
+textToSpeech.shutdown();
+}
+super.onDestroy();
+}
+}
